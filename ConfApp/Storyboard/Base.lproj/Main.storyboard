@@ -107,7 +107,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-db-ju9">
                                 <rect key="frame" x="45" y="97" width="60" height="22"/>
@@ -244,7 +244,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,7 +324,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -344,6 +344,7 @@
                                 <connections>
                                     <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="la3-4Y-fhp"/>
                                     <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="nbH-KX-CpL"/>
+                                    <segue destination="8eT-Rr-pO5" kind="show" id="sTf-B4-LUu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlS-Nq-B5z">
@@ -362,6 +363,7 @@
                                 <connections>
                                     <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="UgW-kY-oQj"/>
                                     <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="G0V-AF-okT"/>
+                                    <segue destination="wTc-sq-zsm" kind="show" id="y4z-zU-BSn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJV-sO-aYv">
@@ -416,6 +418,7 @@
                                 <connections>
                                     <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="99l-iA-wr2"/>
                                     <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="O2o-Zf-g0u"/>
+                                    <segue destination="hRz-bW-xgb" kind="show" id="9pM-bW-YfL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-on-SJC">
@@ -434,8 +437,16 @@
                                 <connections>
                                     <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="Pkw-ke-u8a"/>
                                     <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="3Ov-OF-ba9"/>
+                                    <segue destination="ibT-TW-0Kb" kind="show" id="FpP-fX-5S6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ConfApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-3W-2FY">
+                                <rect key="frame" x="77" y="97" width="220" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RageItalic" family="Rage Italic" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7qx-h6-X1k"/>
@@ -493,7 +504,7 @@
                     </collectionView>
                 </collectionViewController>
             </objects>
-            <point key="canvasLocation" x="9863.2000000000007" y="1574.6626686656673"/>
+            <point key="canvasLocation" x="7513" y="1701"/>
         </scene>
         <!--My profile-->
         <scene sceneID="Q9i-y7-dVO">
@@ -607,7 +618,7 @@
         <scene sceneID="cxL-vF-ldk">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMC-r5-zSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="DIT-dJ-zaO" sceneMemberID="viewController">
+                <viewController title="Agenda" id="DIT-dJ-zaO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S9J-Nr-EzC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -619,17 +630,42 @@
             </objects>
             <point key="canvasLocation" x="3935" y="2484"/>
         </scene>
-        <!--Title-->
+        <!--Map View Controller-->
+        <scene sceneID="vpq-wg-545">
+            <objects>
+                <viewController id="wTc-sq-zsm" customClass="MapViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8FZ-85-KlZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-Kc-g3X" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gZI-ww-Hnx"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="NaG-Kc-g3X" id="HVS-7Q-6Xf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Agk-xd-fgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4389.6000000000004" y="-127.28635682158921"/>
+        </scene>
+        <!--Speakers-->
         <scene sceneID="ASP-L8-G6m">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aVK-xC-tns" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="hRz-bW-xgb" customClass="UsersListViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Speakers" id="hRz-bW-xgb" customClass="UsersListViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2AS-18-mIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BBP-Tw-Nut">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="GDO-sy-EXi" customClass="UserTableViewCell" customModule="ConfApp" customModuleProvider="target">
@@ -711,17 +747,17 @@
             </objects>
             <point key="canvasLocation" x="5735.1999999999998" y="-246.02698650674665"/>
         </scene>
-        <!--Title-->
+        <!--Events-->
         <scene sceneID="xge-EK-gvo">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTo-Gv-yGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="8eT-Rr-pO5" customClass="EventsViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Events" id="8eT-Rr-pO5" customClass="EventsViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rSY-1e-lFk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aiz-0C-m8U">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="150" id="dib-J8-jcp" customClass="EventsTableViewCell" customModule="ConfApp" customModuleProvider="target">
@@ -788,6 +824,14 @@
                                     <outlet property="delegate" destination="8eT-Rr-pO5" id="Hbb-EA-YHe"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufZ-if-mqn">
+                                <rect key="frame" x="0.0" y="311" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addButtonDidTouch:" destination="FTo-Gv-yGP" eventType="touchUpInside" id="ahk-sE-xmP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -933,6 +977,6 @@
         <image name="background" width="471" height="668"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f7U-8V-wHb"/>
+        <segue reference="hh2-ue-j7c"/>
     </inferredMetricsTieBreakers>
 </document>

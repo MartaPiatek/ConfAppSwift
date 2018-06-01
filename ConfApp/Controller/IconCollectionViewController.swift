@@ -12,14 +12,30 @@ private let reuseIdentifier = "Cell"
 
 class IconCollectionViewController: UICollectionViewController {
 
-    private var iconSet: [Icon] = [ Icon(name: "candle", price: 3.99, isFeatured: true),
-                                  Icon(name: "cat", price: 3.99, isFeatured: true),
-                                  Icon(name: "dribble", price: 3.99, isFeatured: true),
-                                  Icon(name: "ghost", price: 3.99, isFeatured: true),
-                                  Icon(name: "hat", price: 3.99, isFeatured: true),
-                                  Icon(name: "owl", price: 3.99, isFeatured: true),
-                                  Icon(name: "pot", price: 3.99, isFeatured: true),
-                                  Icon(name: "pumkin", price: 3.99, isFeatured: true)]
+    private var iconSet: [Icon] = [ Icon(name: "photo1", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo2", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo3", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo4", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo5", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo1", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo2", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo3", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo4", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo5", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo1", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo2", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo3", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo4", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo5", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo2", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo3", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo4", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo5", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo1", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo2", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo3", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo4", price: 3.99, isFeatured: true),
+                                  Icon(name: "photo5", price: 3.99, isFeatured: true)]
     
     
     
