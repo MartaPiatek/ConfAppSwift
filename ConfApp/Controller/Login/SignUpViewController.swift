@@ -73,10 +73,10 @@ class SignUpViewController: UIViewController {
             }
             
             self.view.endEditing(true)
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-            UIApplication.shared.keyWindow?.rootViewController = viewController
-                self.dismiss(animated: true, completion: nil)
-        }
+        //    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+         //   UIApplication.shared.keyWindow?.rootViewController = viewController
+         //       self.dismiss(animated: true, completion: nil)
+      //  }
         })
         
         
@@ -92,6 +92,7 @@ class SignUpViewController: UIViewController {
     */
 
 }
+
 
 extension UITextField
 {
