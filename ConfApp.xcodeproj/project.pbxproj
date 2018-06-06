@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
+		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
+		C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3B520C84CF50093A276 /* ChannelListViewController.swift */; };
+		C192C3B820C84E0B0093A276 /* CreateChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3B720C84E0B0093A276 /* CreateChannelTableViewCell.swift */; };
+		C192C3BA20C84F450093A276 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3B920C84F450093A276 /* Channel.swift */; };
+		C192C3BC20C8522C0093A276 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3BB20C8522C0093A276 /* ChatViewController.swift */; };
+		C192C3BF20C858D40093A276 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3BE20C858D40093A276 /* MenuViewController.swift */; };
 		C1949FB520C1C42E006B9710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FB420C1C42E006B9710 /* AppDelegate.swift */; };
 		C1949FB720C1C42E006B9710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FB620C1C42E006B9710 /* ViewController.swift */; };
 		C1949FBC20C1C42F006B9710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1949FBB20C1C42F006B9710 /* Assets.xcassets */; };
@@ -36,6 +43,14 @@
 /* Begin PBXFileReference section */
 		2977FEC593736DF92323B27C /* Pods-ConfApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D0276952C52B3FE32B174B3 /* Pods-ConfApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C192C3B520C84CF50093A276 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
+		C192C3B720C84E0B0093A276 /* CreateChannelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelTableViewCell.swift; sourceTree = "<group>"; };
+		C192C3B920C84F450093A276 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		C192C3BB20C8522C0093A276 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C192C3BD20C8572E0093A276 /* ConfApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ConfApp.entitlements; sourceTree = "<group>"; };
+		C192C3BE20C858D40093A276 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C1949FB120C1C42E006B9710 /* ConfApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConfApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1949FB420C1C42E006B9710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1949FB620C1C42E006B9710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +129,7 @@
 		C1949FB320C1C42E006B9710 /* ConfApp */ = {
 			isa = PBXGroup;
 			children = (
+				C192C3BD20C8572E0093A276 /* ConfApp.entitlements */,
 				C1949FDE20C1C62D006B9710 /* Cell */,
 				C1949FD320C1C62C006B9710 /* Controller */,
 				C1949FC820C1C62C006B9710 /* Font */,
@@ -153,6 +169,8 @@
 			children = (
 				C1949FD120C1C62C006B9710 /* Event.swift */,
 				C1949FD220C1C62C006B9710 /* User.swift */,
+				C100F1D820C721960033B9F2 /* Currency.swift */,
+				C192C3B920C84F450093A276 /* Channel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +184,10 @@
 				C1949FD720C1C62C006B9710 /* Login */,
 				C1949FDC20C1C62C006B9710 /* MapViewController.swift */,
 				C1949FDD20C1C62C006B9710 /* UsersListViewController.swift */,
+				C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */,
+				C192C3B520C84CF50093A276 /* ChannelListViewController.swift */,
+				C192C3BB20C8522C0093A276 /* ChatViewController.swift */,
+				C192C3BE20C858D40093A276 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 			children = (
 				C1949FDF20C1C62D006B9710 /* EventsTableViewCell.swift */,
 				C1949FE020C1C62D006B9710 /* UserTableViewCell.swift */,
+				C192C3B720C84E0B0093A276 /* CreateChannelTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -225,6 +248,11 @@
 				TargetAttributes = {
 					C1949FB020C1C42E006B9710 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -290,6 +318,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -297,6 +327,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -337,12 +369,19 @@
 				C1949FF120C1C62D006B9710 /* UsersListViewController.swift in Sources */,
 				C1949FF320C1C62D006B9710 /* UserTableViewCell.swift in Sources */,
 				C1949FEE20C1C62D006B9710 /* ResetPasswordViewController.swift in Sources */,
+				C192C3BF20C858D40093A276 /* MenuViewController.swift in Sources */,
 				C1949FB720C1C42E006B9710 /* ViewController.swift in Sources */,
 				C1949FB520C1C42E006B9710 /* AppDelegate.swift in Sources */,
 				C1949FF220C1C62D006B9710 /* EventsTableViewCell.swift in Sources */,
+				C100F1D920C721960033B9F2 /* Currency.swift in Sources */,
 				C1949FF020C1C62D006B9710 /* MapViewController.swift in Sources */,
 				C1949FEF20C1C62D006B9710 /* SignUpViewController.swift in Sources */,
+				C192C3BA20C84F450093A276 /* Channel.swift in Sources */,
 				C1949FE820C1C62D006B9710 /* User.swift in Sources */,
+				C192C3B820C84E0B0093A276 /* CreateChannelTableViewCell.swift in Sources */,
+				C192C3BC20C8522C0093A276 /* ChatViewController.swift in Sources */,
+				C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */,
+				C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */,
 				C1949FE620C1C62D006B9710 /* IconCollectionViewCell.swift in Sources */,
 				C1949FEB20C1C62D006B9710 /* IconCollectionViewController.swift in Sources */,
 				C1949FEA20C1C62D006B9710 /* HomeViewController.swift in Sources */,
