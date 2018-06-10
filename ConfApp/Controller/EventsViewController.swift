@@ -119,14 +119,28 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
       
     }
 
-    /*
-    // MARK: - Navigation
+    
+   // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+       
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let destinationController = segue.destination as! EventDetailViewController
+            
+            destinationController.titleValue = items[indexPath.row].title
+            destinationController.speakerValue = items[indexPath.row].speaker
+            destinationController.dateValue = items[indexPath.row].date
+            destinationController.timeValue = items[indexPath.row].time
+            destinationController.localizationValue = items[indexPath.row].localization
+            destinationController.abstractValue = items[indexPath.row].abstract
+ 
+        }
+ 
+        
     }
-    */
+ 
+    
 
 }
