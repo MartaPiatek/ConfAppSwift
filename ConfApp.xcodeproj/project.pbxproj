@@ -37,6 +37,7 @@
 		C1949FF220C1C62D006B9710 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FDF20C1C62D006B9710 /* EventsTableViewCell.swift */; };
 		C1949FF320C1C62D006B9710 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FE020C1C62D006B9710 /* UserTableViewCell.swift */; };
 		C1949FF420C1C62D006B9710 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FE120C1C62D006B9710 /* Icon.swift */; };
+		C195F67220CD6EDA000C8757 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C195F67120CD6EDA000C8757 /* AgendaViewController.swift */; };
 		D0DB9F204E421BBC6364C9CC /* Pods_ConfApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC39C40665136BC72A90730 /* Pods_ConfApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		C1949FDF20C1C62D006B9710 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
 		C1949FE020C1C62D006B9710 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		C1949FE120C1C62D006B9710 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		C195F67120CD6EDA000C8757 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		DFC39C40665136BC72A90730 /* Pods_ConfApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -188,6 +190,7 @@
 				C192C3B520C84CF50093A276 /* ChannelListViewController.swift */,
 				C192C3BB20C8522C0093A276 /* ChatViewController.swift */,
 				C192C3BE20C858D40093A276 /* MenuViewController.swift */,
+				C195F67120CD6EDA000C8757 /* AgendaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				C1949FEC20C1C62D006B9710 /* LoginViewController.swift in Sources */,
 				C1949FF420C1C62D006B9710 /* Icon.swift in Sources */,
 				C1949FE720C1C62D006B9710 /* Event.swift in Sources */,
+				C195F67220CD6EDA000C8757 /* AgendaViewController.swift in Sources */,
 				C1949FED20C1C62D006B9710 /* ProfileViewController.swift in Sources */,
 				C1949FF120C1C62D006B9710 /* UsersListViewController.swift in Sources */,
 				C1949FF320C1C62D006B9710 /* UserTableViewCell.swift in Sources */,

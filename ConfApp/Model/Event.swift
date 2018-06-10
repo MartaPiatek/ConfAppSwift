@@ -18,10 +18,11 @@ struct Event {
     let date: String
     let time: String
     let localization: String
+    let abstract: String
     let key: String
     
     
-    init( speaker: String, title: String, date: String, time: String, localization: String, key: String = ""){
+    init( speaker: String, title: String, date: String, time: String, localization: String, abstract: String, key: String = ""){
         
         self.ref = nil
         self.key = key
@@ -31,6 +32,7 @@ struct Event {
         self.date = date
         self.time = time
         self.localization = localization
+        self.abstract = abstract
     }
     
     init?(snapshot: DataSnapshot) {
@@ -38,9 +40,10 @@ struct Event {
             let value = snapshot.value as? [String: AnyObject],
             let speaker = value["speaker"] as? String,
             let title = value["title"] as? String,
-        let date = value["date"] as? String,
-        let time = value["time"] as? String,
-        let localization = value["localization"] as? String else {
+            let date = value["date"] as? String,
+            let time = value["time"] as? String,
+            let localization = value["localization"] as? String,
+            let abstract = value["abstract"] as? String else {
                 return nil
         }
       //  self.eventId = ""
@@ -51,6 +54,7 @@ struct Event {
         self.date = date
         self.time = time
         self.localization = localization
+        self.abstract = abstract
     }
     
     func toAnyObject() -> Any {
@@ -59,7 +63,8 @@ struct Event {
             "title": title,
             "date": date,
             "time": time,
-            "localization": localization
+            "localization": localization,
+            "abstract": abstract
         ]
     }
 }
