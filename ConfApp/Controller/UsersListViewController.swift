@@ -80,8 +80,7 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
             let userItemRef = self.ref.child(text)
             
             userItemRef.setValue(userItem.toAnyObject())
-            //   self.items.append(groceryItem)
-            // self.tableView.reloadData()
+           
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -95,14 +94,23 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         present(alert, animated: true, completion: nil)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let destinationController = segue.destination as! SpeakerDetailViewController
+            
+            destinationController.firstNameValue = items[indexPath.row].firstName
+            destinationController.lastNameValue = items[indexPath.row].lastName
+            destinationController.companyValue = items[indexPath.row].company
+            
+            
+        }
+    
     }
-    */
+    
 
 }
