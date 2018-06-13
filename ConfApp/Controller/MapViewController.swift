@@ -8,6 +8,9 @@
 
 import UIKit
 import GoogleMaps
+import UberRides
+import CoreLocation
+
 
 class MapViewController: UIViewController {
 
@@ -21,6 +24,22 @@ class MapViewController: UIViewController {
 
         locationManager.delegate = self as? CLLocationManagerDelegate
         locationManager.requestWhenInUseAuthorization()
+        
+        let button = RideRequestButton()
+       
+        
+        let dropoffLocation = CLLocation(latitude: 51.108221, longitude: 17.062037)
+        let builder = RideParametersBuilder()
+        builder.dropoffLocation = dropoffLocation
+        builder.dropoffNickname = "Politechnika Wrocławska"
+        button.rideParameters = builder.build()
+        
+         button.center = view.center
+        
+        button.colorStyle = .white
+        view.addSubview(button)
+        
+    
     }
 
     override func didReceiveMemoryWarning() {

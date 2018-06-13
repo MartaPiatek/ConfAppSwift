@@ -15,4 +15,8 @@ pod 'JSQMessagesViewController'
 
 pod 'GoogleMaps'
 
+pod 'UberRides'
+
+
+
 end

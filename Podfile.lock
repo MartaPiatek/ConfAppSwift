@@ -57,6 +57,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - UberCore (0.9.0)
+  - UberRides (0.9.0):
+    - UberCore
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -65,6 +68,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleMaps
   - JSQMessagesViewController
+  - UberRides
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -82,6 +86,8 @@ SPEC REPOS:
     - JSQSystemSoundPlayer
     - leveldb-library
     - nanopb
+    - UberCore
+    - UberRides
 
 SPEC CHECKSUMS:
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
@@ -98,7 +104,9 @@ SPEC CHECKSUMS:
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  UberCore: c734f82e2152dcae52beaefc3bdf7e40186af821
+  UberRides: 90b7d6f60d01f3afa6e797f58f3ccbde824f90bf
 
-PODFILE CHECKSUM: 3bb6401599d210aa6289073c7bfde79e53673472
+PODFILE CHECKSUM: b33c8465fec50584e631377d23f563005bf697db
 
 COCOAPODS: 1.5.3
