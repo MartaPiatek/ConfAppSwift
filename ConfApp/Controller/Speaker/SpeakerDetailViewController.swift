@@ -12,17 +12,20 @@ class SpeakerDetailViewController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var company: UILabel!
+     @IBOutlet weak var job: UILabel!
    
     
     var firstNameValue: String = ""
     var lastNameValue: String = ""
     var companyValue: String = ""
+    var jobValue: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         name.text = firstNameValue + " " + lastNameValue
         company.text = companyValue
+        job.text = jobValue
        
     }
 

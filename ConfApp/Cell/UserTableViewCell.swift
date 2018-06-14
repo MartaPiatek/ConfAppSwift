@@ -10,8 +10,8 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
-    @IBOutlet var firstNameLabel: UILabel!
-    @IBOutlet var lastNameLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var jobLabel: UILabel!
     @IBOutlet var companyLabel: UILabel!
 
     

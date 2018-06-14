@@ -31,8 +31,8 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         //   cell.textLabel?.text = eventItem.title
         //   cell.detailTextLabel?.text = eventItem.speaker
         
-        cell.firstNameLabel.text = userItem.firstName
-        cell.lastNameLabel.text = userItem.lastName
+        cell.nameLabel.text = userItem.firstName + " " + userItem.lastName
+        cell.jobLabel.text = userItem.job
         cell.companyLabel.text = userItem.company
         
         return cell
@@ -42,6 +42,8 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addSpeakers()
+        
         ref.observe(.value, with: { snapshot in
             // print(snapshot.value as Any)
             var newItems: [User] = []
@@ -64,34 +66,49 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Event Item",
-                                      message: "Add an Item",
-                                      preferredStyle: .alert)
+    func addSpeakers(){
+    var id = 1
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-            guard let textField = alert.textFields?.first,
-                let text = textField.text else {return}
-            
-            
-            
-            let userItem = User(firstName: text, lastName: "Kowalski", company: "Apple")
-            
-            let userItemRef = self.ref.child(text)
-            
-            userItemRef.setValue(userItem.toAnyObject())
-           
-        }
+    var userItem = User(firstName: "James", lastName: "Thomas", company: "IBM", job: "Developer Advocate")
+    var userItemRef = self.ref.child(String(describing: id))
+    userItemRef.setValue(userItem.toAnyObject())
+    
+    id = id + 1
         
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel)
+        userItem = User(firstName: "Alexander", lastName: "Meijers", company: "ETTU", job: "Solutions Architect / HoloLens Evangelist")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
         
-        alert.addTextField()
+        id = id + 1
         
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
+        userItem = User(firstName: "Vitaliy", lastName: "Rudnytskiy", company: "SAP", job: "Principal Architect")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
         
-        present(alert, animated: true, completion: nil)
+        id = id + 1
+        
+        userItem = User(firstName: "Marcin", lastName: "Stachowiak", company: "Capgemini Software Solutions Center", job: "Senior Software Developer")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
+        
+        id = id + 1
+        
+        userItem = User(firstName: "Tiffany", lastName: "Jernigan", company: "Amazon Web Services", job: "Developer Advocate")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
+        
+        id = id + 1
+        
+        userItem = User(firstName: "Marek", lastName: "Wagner", company: "GSK IT", job: "Service Manager, Web Dev L3 Support")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
+        
+        id = id + 1
+        
+        userItem = User(firstName: "Monika", lastName: "Januszek", company: "SAP Polska", job: "Senior Software Engineer")
+        userItemRef = self.ref.child(String(describing: id))
+        userItemRef.setValue(userItem.toAnyObject())
+        
     }
 
     
@@ -106,6 +123,7 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
             destinationController.firstNameValue = items[indexPath.row].firstName
             destinationController.lastNameValue = items[indexPath.row].lastName
             destinationController.companyValue = items[indexPath.row].company
+            destinationController.jobValue = items[indexPath.row].job
             
             
         }

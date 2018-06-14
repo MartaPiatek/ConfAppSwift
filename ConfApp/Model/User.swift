@@ -16,17 +16,19 @@ struct User {
     let firstName: String
     let lastName: String
     let company: String
+    let job: String
     
     let key: String
     
     
-    init( firstName: String, lastName: String, company: String, key: String = ""){
+    init( firstName: String, lastName: String, company: String, job: String, key: String = ""){
         
         self.ref = nil
         self.key = key
         self.firstName = firstName
         self.lastName = lastName
         self.company = company
+        self.job = job
         
     }
     
@@ -35,7 +37,8 @@ struct User {
             let value = snapshot.value as? [String: AnyObject],
             let firstName = value["firstName"] as? String,
             let lastName = value["lastName"] as? String,
-            let company = value["company"] as? String
+            let company = value["company"] as? String,
+         let job = value["job"] as? String
             else {
                 return nil
         }
@@ -45,6 +48,7 @@ struct User {
         self.firstName = firstName
         self.lastName = lastName
         self.company = company
+        self.job = job
         
     }
     
@@ -52,7 +56,8 @@ struct User {
         return [
             "firstName": firstName,
             "lastName": lastName,
-            "company": company
+            "company": company,
+            "job": job
         ]
     }
 }
