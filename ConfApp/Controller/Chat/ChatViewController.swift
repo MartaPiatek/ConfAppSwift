@@ -23,7 +23,7 @@ class ChatViewController: JSQMessagesViewController {
     var channelRef: DatabaseReference?
     var channel: Channel? {
         didSet {
-           // title = channel?.name
+            title = channel?.name
         }
     }
     
@@ -32,6 +32,8 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
        self.senderId = Auth.auth().currentUser?.uid
         
         // No avatars
