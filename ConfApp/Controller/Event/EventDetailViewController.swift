@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FacebookShare
+import TwitterKit
 
 class EventDetailViewController: UIViewController {
 
@@ -45,6 +47,8 @@ class EventDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @IBAction func addNoteButton(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Note Item",
                                       message: "Add an Item",
@@ -77,6 +81,46 @@ class EventDetailViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 
+      @IBAction func facebookButton(_ sender: AnyObject) {
+    let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
+        
+        guard let selectedImage = UIImage(named: "background.jpg") else {
+            return
+        }
+        let photo = Photo(image: selectedImage, userGenerated: false)
+        let content = PhotoShareContent(photos: [photo])
+        
+        let shareDialog = ShareDialog(content: content)
+        do {
+            try shareDialog.show()
+        } catch {
+            print(error)
+        }
+    }
+}
+    
+      @IBAction func twitterButton(_ sender: AnyObject) {
+        let twitterAction = UIAlertAction(title: "Twitter", style: .default) { (action) in
+            
+            guard let selectedImage = UIImage(named: "background.jpg") else {
+                return
+            }
+            
+            let composer = TWTRComposer()
+            composer.setText("Twitter wiadomosc testowa")
+            composer.setImage(selectedImage)
+            
+            composer.show(from: self, completion: { (result) in
+                if(result == .done) {
+                    print("Successfully composed Tweet")
+                } else {
+                    print("Cancelled composing")
+                }
+            })
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 

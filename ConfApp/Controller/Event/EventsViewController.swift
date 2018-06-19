@@ -32,7 +32,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.titleLabel.text = eventItem.title
         cell.authorLabel.text = items[indexPath.row].speaker
-        cell.dateLabel.text = items[indexPath.row].date
+        //cell.dateLabel.text = items[indexPath.row].date
         cell.timeLabel.text = items[indexPath.row].time
         
         return cell
@@ -41,6 +41,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addEvents()
         ref.observe(.value, with: { snapshot in
           
             var newItems: [Event] = []
@@ -72,8 +73,8 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    @IBAction func addButtonDidTouch(_ sender: AnyObject) {
-            
+ //   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+    func addEvents(){
         var id = 1
             
         var eventItem = Event(speaker: "James Thomas", title: "Serverless: The Misssing Manual", date: "10 July 2018", time: "10.00", localization: "A1", abstract:"Do serverless cloud platforms leave you with more questions than answers? This session will focus on migrating from traditional applications to serverless cloud platforms. You’ll learn about serving files without a web server, managing application state in a stateless environment, running background processes in ephemeral runtimes and more. These techniques will enable you to build modern applications using serverless platforms. This session is for developers who see the benefits of serverless but are struggling to adjust to a serverless world.")
@@ -143,4 +144,19 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
  
     
 
+}
+extension UILabel {
+    var optimalHeight : CGFloat {
+        get
+        {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: CGFloat.greatestFiniteMagnitude))
+            label.numberOfLines = 0
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+            label.font = self.font
+            label.text = self.text
+            label.sizeToFit()
+            return label.frame.height
+        }
+        
+}
 }

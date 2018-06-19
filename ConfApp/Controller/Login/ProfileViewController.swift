@@ -12,7 +12,7 @@ import Firebase
 class ProfileViewController: UIViewController {
 
     @IBOutlet var nameLabel: UILabel!
-    
+    @IBOutlet var emailLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController {
         
         if let currentUser = Auth.auth().currentUser {
             nameLabel.text = currentUser.displayName
+            emailLabel.text = currentUser.email
         }
     }
 

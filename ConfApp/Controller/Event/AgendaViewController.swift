@@ -25,12 +25,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AgendaTableViewCell
         
         let eventDate = dates[indexPath.row]
         
-       
-            cell.textLabel?.text = "Day \(indexPath.row + 1) " + eventDate
+       cell.dayLabel?.text = "Day \(indexPath.row + 1) "
+            cell.dateLabel?.text = eventDate
         
         return cell
     }

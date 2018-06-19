@@ -18,5 +18,9 @@ pod 'GoogleMaps'
 pod 'UberRides'
 
 
+pod 'FacebookCore'
+pod 'FacebookShare'
+pod 'FacebookLogin'
 
+pod 'TwitterKit'
 end

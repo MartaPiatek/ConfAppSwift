@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleMaps
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       
+         TWTRTwitter.sharedInstance().start(withConsumerKey: "REsQLbkKzVas8RKwK209VDsIG", consumerSecret: "QZE688CvafFo9y9y6FHYsDgiFnM4JgQnH1LqZPQeMYmoAjwUgm")
         
         FirebaseApp.configure()
          GMSServices.provideAPIKey(googleApiKey)
@@ -47,6 +50,8 @@ let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url:URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    }
 }
 
