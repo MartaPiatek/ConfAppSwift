@@ -41,50 +41,29 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>UberClientID</key>
-    <string>EhMa-zudfU6eb9XAZG0Wb3C69uA-vXRo</string>
-    <key>UberDisplayName</key>
-    <string>ConfApp</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>uber</string>
-        <string>uberauth</string>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb701807246829077</string>
-                </array>
-            </dict>
-        </array>
-    <key>FacebookAppID</key>
-    <string>701807246829077</string>
-    <key>FacebookDisplayName</key>
-    <string>ConfApp</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
-    
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>twitterkit-REsQLbkKzVas8RKwK209VDsIG</string>
-            </array>
-        </dict>
-    </array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>twitter</string>
-        <string>twitterauth</string>
-    </array>
-        
+	<key>UberClientID</key>
+	<string>EhMa-zudfU6eb9XAZG0Wb3C69uA-vXRo</string>
+	<key>UberDisplayName</key>
+	<string>ConfApp</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>twitterauth</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-REsQLbkKzVas8RKwK209VDsIG</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>701807246829077</string>
+	<key>FacebookDisplayName</key>
+	<string>ConfApp</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string></string>
 </dict>
 </plist>

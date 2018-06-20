@@ -21,6 +21,18 @@ class LoginViewController: UIViewController {
 
         passwordTextField.setBottomBorder(borderColor: UIColor.white)
         emailTextField.setBottomBorder(borderColor: UIColor.white)
+   /*
+        Auth.auth().addStateDidChangeListener() { auth, user in
+            
+            if user != nil {
+             
+                self.performSegue(withIdentifier: self.loginToList, sender: nil)
+                self.emailTextField.text = nil
+                self.passwordTextField.text = nil
+            }
+        }
+ */
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,14 +84,13 @@ class LoginViewController: UIViewController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        let navVc = segue.destination as! UINavigationController
+        let channelVc = navVc.viewControllers.first as! ChannelListViewController 
+        
+        channelVc.senderDisplayName = Auth.auth().currentUser?.displayName
+       // channelVc.senderId = Auth.auth().currentUser?.uid
     }
-    */
 
 }
