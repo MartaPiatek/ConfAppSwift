@@ -31,10 +31,10 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
     
     private func observeChannels() {
       
-        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
-            let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
+        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in
+            let channelData = snapshot.value as! Dictionary<String, AnyObject>
             let id = snapshot.key
-            if let name = channelData["name"] as! String?, name.characters.count > 0 { // 3
+            if let name = channelData["name"] as! String?, name.characters.count > 0 { 
                 self.channels.append(Channel(id: id, name: name))
                 self.tableView.reloadData()
             } else {
@@ -63,10 +63,10 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
     
     
      func numberOfSections(in tableView: UITableView) -> Int {
-        return 2 // 1
+        return 2
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // 2
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let currentSection: Section = Section(rawValue: section) {
             switch currentSection {
             case .createNewChannelSection:
@@ -79,7 +79,7 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
-    // 3
+    
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue ? "NewChannel" : "ExistingChannel"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)

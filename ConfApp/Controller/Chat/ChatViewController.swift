@@ -20,6 +20,23 @@ class ChatViewController: JSQMessagesViewController {
     private lazy var messageRef: DatabaseReference = self.channelRef!.child("messages")
     private var newMessageRefHandle: DatabaseHandle?
     
+    private lazy var userIsTypingRef: DatabaseReference = self.channelRef!.child("typingIndicator").child(self.senderId)
+    
+    
+    private lazy var usersTypingQuery: DatabaseQuery = self.channelRef!.child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true)
+    private var localTyping = false
+    
+    var isTyping: Bool{
+        get {
+            return localTyping
+        }
+        set {
+            localTyping = newValue
+            userIsTypingRef.setValue(newValue)
+        }
+    }
+    
+    
     var channelRef: DatabaseReference?
     var channel: Channel? {
         didSet {
@@ -28,6 +45,10 @@ class ChatViewController: JSQMessagesViewController {
     }
     
    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        observeTyping()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +57,13 @@ class ChatViewController: JSQMessagesViewController {
         
        self.senderId = Auth.auth().currentUser?.uid
         
+        observeMessages()
+        
         // No avatars
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
-        observeMessages()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,10 +89,10 @@ class ChatViewController: JSQMessagesViewController {
         return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = messages[indexPath.item] // 1
-        if message.senderId == senderId { // 2
+        let message = messages[indexPath.item]
+        if message.senderId == senderId {
             return outgoingBubbleImageView
-        } else { // 3
+        } else {
             return incomingBubbleImageView
         }
     }
@@ -79,6 +102,23 @@ class ChatViewController: JSQMessagesViewController {
             messages.append(message)
         }
     }
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
+        return 15
+    }
+    override func collectionView(_ collectionView: JSQMessagesCollectionView?, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString? {
+        let message = messages[indexPath.item]
+        switch message.senderId {
+        case senderId:
+            return nil
+        default:
+            guard let senderDisplayName = message.senderDisplayName else {
+                assertionFailure()
+                return nil
+            }
+            return NSAttributedString(string: senderDisplayName)
+        }
+    }
+
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         return nil
@@ -96,36 +136,34 @@ class ChatViewController: JSQMessagesViewController {
         return cell
     }
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        let itemRef = messageRef.childByAutoId() // 1
-        let messageItem = [ // 2
+        let itemRef = messageRef.childByAutoId()
+        let messageItem = [
             "senderId": senderId!,
             "senderName": senderDisplayName!,
             "text": text!,
             ]
         
-        itemRef.setValue(messageItem) // 3
+        itemRef.setValue(messageItem)
         
-        JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
         
-        finishSendingMessage() // 5
+        finishSendingMessage()
+        isTyping = false
     }
     
     private func observeMessages() {
         messageRef = channelRef!.child("messages")
-        // 1.
+        
         let messageQuery = messageRef.queryLimited(toLast:25)
         
-        // 2. We can use the observe method to listen for new
-        // messages being written to the Firebase DB
         newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
-            // 3
+            
             let messageData = snapshot.value as! Dictionary<String, String>
             
             if let id = messageData["senderId"] as String!, let name = messageData["senderName"] as String!, let text = messageData["text"] as String!, text.characters.count > 0 {
-                // 4
+                
                 self.addMessage(withId: id, name: name, text: text)
                 
-                // 5
                 self.finishReceivingMessage()
             } else {
                 print("Error! Could not decode message data")
@@ -133,6 +171,30 @@ class ChatViewController: JSQMessagesViewController {
         })
     }
     
+    override func textViewDidChange(_ textView: UITextView) {
+        super.textViewDidChange(textView)
+        
+        isTyping = textView.text != ""
+
+    }
+    
+    private func observeTyping(){
+        let typingIndicatorRef = channelRef!.child("typingIndicator")
+        userIsTypingRef = typingIndicatorRef.child(senderId)
+        userIsTypingRef.onDisconnectRemoveValue()
+        usersTypingQuery = typingIndicatorRef.queryOrderedByValue().queryEqual(toValue: true)
+        
+        usersTypingQuery.observe(.value) { (data: DataSnapshot) in
+            
+            if data.childrenCount == 1 && self.isTyping {
+                return
+            }
+            
+            self.showTypingIndicator = data.childrenCount > 0
+            self.scrollToBottom(animated: true)
+        }
+
+    }
     /*
     // MARK: - Navigation
 
