@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
 		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
+		C10C5ECF20DBD4E100708B58 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C10C5ECE20DBD4E100708B58 /* Settings.bundle */; };
 		C130C7DB20D1290F003EAECB /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */; };
 		C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E420D16AC6003EAECB /* PhotoItem.swift */; };
 		C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E620D16B76003EAECB /* DefaultCollection.swift */; };
@@ -54,6 +55,7 @@
 		6D0276952C52B3FE32B174B3 /* Pods-ConfApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C10C5ECE20DBD4E100708B58 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7E420D16AC6003EAECB /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		C130C7E620D16B76003EAECB /* DefaultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollection.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				C1949FBB20C1C42F006B9710 /* Assets.xcassets */,
 				C1949FBD20C1C42F006B9710 /* LaunchScreen.storyboard */,
 				C1949FC020C1C42F006B9710 /* Info.plist */,
+				C10C5ECE20DBD4E100708B58 /* Settings.bundle */,
 			);
 			path = ConfApp;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				C1949FC720C1C518006B9710 /* GoogleService-Info.plist in Resources */,
 				C18F719A20D839FD00093973 /* Main.storyboard in Resources */,
 				C1949FBC20C1C42F006B9710 /* Assets.xcassets in Resources */,
+				C10C5ECF20DBD4E100708B58 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
