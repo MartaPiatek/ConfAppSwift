@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  MenuViewController.swift
 //  ConfApp
 //
-//  Created by Marta Piątek on 13.05.2018.
+//  Created by Marta Piątek on 24.06.2018.
 //  Copyright © 2018 Marta Piątek. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,4 @@ class HomeViewController: UIViewController {
     }
     */
 
-    @IBAction func showPopUp(_ sender: Any) {
-   
-    let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
-        
-    }
 }

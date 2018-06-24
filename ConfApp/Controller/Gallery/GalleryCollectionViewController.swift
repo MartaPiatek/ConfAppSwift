@@ -15,6 +15,9 @@ class GalleryCollectionViewController: UICollectionViewController {
     
      let collections = DefaulCollection().photos
     
+   
+  
+    
     var collection: [PhotoItem]?
     
     override func viewDidLoad() {
@@ -28,25 +31,44 @@ class GalleryCollectionViewController: UICollectionViewController {
 
        self.collectionView!.delegate = self
         self.collectionView!.dataSource = self
-        
+       
         collection = collections
         
     }
-
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+      
+        
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+               popOverVC.imageView.image = UIImage(named: collection![indexPath.row].picture)
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     
+    
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? GalleryDetailViewController{
+        if let destinationViewController = segue.destination as?  PopUpViewController {// GalleryDetailViewController{
             if let cell = sender as? UICollectionViewCell {
                 if let indexPath = collectionView?.indexPath(for: cell) {
                     destinationViewController.item = collection![indexPath.row]
+                    
+                    
                 }
             }
         }
@@ -54,7 +76,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     }
     
 
-    
+    */
     
     
     // MARK: UICollectionViewDataSource

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
 		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
-		C10C5ECF20DBD4E100708B58 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C10C5ECE20DBD4E100708B58 /* Settings.bundle */; };
 		C130C7DB20D1290F003EAECB /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */; };
 		C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E420D16AC6003EAECB /* PhotoItem.swift */; };
 		C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E620D16B76003EAECB /* DefaultCollection.swift */; };
@@ -47,6 +46,8 @@
 		C1A03D3320CE8FAE00D092DC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3220CE8FAE00D092DC /* NoteViewController.swift */; };
 		C1A03D3520CE902F00D092DC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3420CE902F00D092DC /* Note.swift */; };
 		C1A03D3720CE95B700D092DC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3620CE95B700D092DC /* NoteTableViewCell.swift */; };
+		C1D5508020DD29A3005C25D8 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D5507F20DD29A3005C25D8 /* PopUpViewController.swift */; };
+		C1F4335920E0455600A4967C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F4335820E0455600A4967C /* MenuViewController.swift */; };
 		D0DB9F204E421BBC6364C9CC /* Pods_ConfApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC39C40665136BC72A90730 /* Pods_ConfApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +56,6 @@
 		6D0276952C52B3FE32B174B3 /* Pods-ConfApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		C10C5ECE20DBD4E100708B58 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7E420D16AC6003EAECB /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		C130C7E620D16B76003EAECB /* DefaultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollection.swift; sourceTree = "<group>"; };
@@ -96,6 +96,8 @@
 		C1A03D3220CE8FAE00D092DC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		C1A03D3420CE902F00D092DC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		C1A03D3620CE95B700D092DC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		C1D5507F20DD29A3005C25D8 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		C1F4335820E0455600A4967C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		DFC39C40665136BC72A90730 /* Pods_ConfApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,7 +203,6 @@
 				C1949FBB20C1C42F006B9710 /* Assets.xcassets */,
 				C1949FBD20C1C42F006B9710 /* LaunchScreen.storyboard */,
 				C1949FC020C1C42F006B9710 /* Info.plist */,
-				C10C5ECE20DBD4E100708B58 /* Settings.bundle */,
 			);
 			path = ConfApp;
 			sourceTree = "<group>";
@@ -248,6 +249,8 @@
 				C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */,
 				C1A03D3220CE8FAE00D092DC /* NoteViewController.swift */,
 				C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */,
+				C1D5507F20DD29A3005C25D8 /* PopUpViewController.swift */,
+				C1F4335820E0455600A4967C /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,7 +350,6 @@
 				C1949FC720C1C518006B9710 /* GoogleService-Info.plist in Resources */,
 				C18F719A20D839FD00093973 /* Main.storyboard in Resources */,
 				C1949FBC20C1C42F006B9710 /* Assets.xcassets in Resources */,
-				C10C5ECF20DBD4E100708B58 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +385,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSInteractiveMap/FSInteractiveMap.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -390,6 +393,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/NMPopUpViewSwift/NMPopUpViewSwift.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
@@ -403,6 +407,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSInteractiveMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
@@ -410,6 +415,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMPopUpViewSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
@@ -478,9 +484,11 @@
 				C130C7E920D16C96003EAECB /* GalleryCollectionViewController.swift in Sources */,
 				C192C3BC20C8522C0093A276 /* ChatViewController.swift in Sources */,
 				C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */,
+				C1D5508020DD29A3005C25D8 /* PopUpViewController.swift in Sources */,
 				C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */,
 				C1A03D3320CE8FAE00D092DC /* NoteViewController.swift in Sources */,
 				C1A03D3520CE902F00D092DC /* Note.swift in Sources */,
+				C1F4335920E0455600A4967C /* MenuViewController.swift in Sources */,
 				C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */,
 				C1949FEA20C1C62D006B9710 /* HomeViewController.swift in Sources */,
 				C1949FE920C1C62D006B9710 /* EventsViewController.swift in Sources */,
