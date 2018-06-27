@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C35C801A3B221111230AD5039C74A870"
+               BlueprintIdentifier = "ACF973CE6A54CFFB4FEC5643F6FB94AC"
                BlueprintName = "UberCore"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "UberCore.framework">

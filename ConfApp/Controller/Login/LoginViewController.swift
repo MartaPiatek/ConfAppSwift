@@ -21,6 +21,10 @@ class LoginViewController: UIViewController {
 
         passwordTextField.setBottomBorder(borderColor: UIColor.white)
         emailTextField.setBottomBorder(borderColor: UIColor.white)
+        self.hideKeyboardWhenTappedAround()
+        self.navigationController?.navigationItem.leftBarButtonItem?.title = "title"
+     
+        
    /*
         Auth.auth().addStateDidChangeListener() { auth, user in
             
@@ -93,4 +97,25 @@ class LoginViewController: UIViewController {
        // channelVc.senderId = Auth.auth().currentUser?.uid
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.emailTextField.resignFirstResponder()
+         self.passwordTextField.resignFirstResponder()
+        return true
+    }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+
 }
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+

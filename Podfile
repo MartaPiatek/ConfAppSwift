@@ -24,5 +24,6 @@ pod 'FacebookLogin'
 
 pod 'TwitterKit'
 
-
+pod 'FSInteractiveMap'
+pod 'NMPopUpViewSwift'
 end

@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleMaps
 import TwitterKit
+import Photos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,14 +20,22 @@ let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       
+    //    UINavigationBar.appearance().backgroundColor = .clear
+     //   UINavigationBar.appearance().isTranslucent = true
+        
          TWTRTwitter.sharedInstance().start(withConsumerKey: "REsQLbkKzVas8RKwK209VDsIG", consumerSecret: "QZE688CvafFo9y9y6FHYsDgiFnM4JgQnH1LqZPQeMYmoAjwUgm")
         
         FirebaseApp.configure()
          GMSServices.provideAPIKey(googleApiKey)
+       
+   //     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Skia", size: 24)!]
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Skia", size: 20)!], for: UIControlState.normal)
+
         
         return true
     }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

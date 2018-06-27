@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-Yz-TMu">
-                                <rect key="frame" x="0.0" y="-12" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5q-iu-QgK">
@@ -182,7 +182,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wZK-CC-Mxm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sign up" id="BjS-ZG-24J"/>
+                    <navigationItem key="navigationItem" title="Sign up" id="BjS-ZG-24J">
+                        <barButtonItem key="backBarButtonItem" title="Menu" id="Bvj-Bl-nGX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="d5q-iu-QgK" id="9bB-29-fc1"/>
                         <outlet property="nameTextField" destination="jtg-1U-e4t" id="AHy-sv-558"/>
@@ -193,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="800.00000000000011" y="-9.7826086956521738"/>
         </scene>
-        <!--Login-->
+        <!--LOGIN-->
         <scene sceneID="NEf-AS-FHV">
             <objects>
-                <viewController id="AkS-do-OwB" customClass="LoginViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LOGIN" id="AkS-do-OwB" customClass="LoginViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fho-jC-7eC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,77 +207,101 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-hL-Uot">
-                                <rect key="frame" x="47" y="181" width="198" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYQ-z7-Ae1">
-                                <rect key="frame" x="47" y="265" width="119" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EMAIL ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOn-tU-Q5B">
-                                <rect key="frame" x="47" y="123" width="170" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-ae-K7Z">
-                                <rect key="frame" x="47" y="318" width="198" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDF-aJ-Gn9">
-                                <rect key="frame" x="82" y="462" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="25"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginWithSender:" destination="AkS-do-OwB" eventType="touchUpInside" id="Jhq-9Z-Dmc"/>
-                                    <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="4Qe-pS-uV9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-t4-aPc">
-                                <rect key="frame" x="82" y="549" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="25"/>
-                                <state key="normal" title="Reset password">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="UEw-eb-oDx"/>
-                                    <segue destination="mr3-xC-9SP" kind="show" id="Xpe-BL-wLY"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jS9-ho-IcH">
+                                <rect key="frame" x="50" y="114" width="200" height="209"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOn-tU-Q5B">
+                                        <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="22"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ufd-hL-Uot">
+                                        <rect key="frame" x="0.0" y="57" width="200" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Gq8-Lr-4Zx"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYQ-z7-Ae1">
+                                        <rect key="frame" x="0.0" y="122" width="119" height="22"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-ae-K7Z">
+                                        <rect key="frame" x="0.0" y="179" width="200" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Jmb-v3-bzx"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="1rm-GR-UXn">
+                                <rect key="frame" x="82" y="486" width="250" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDF-aJ-Gn9">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="UAe-KG-kOg"/>
+                                            <constraint firstAttribute="height" constant="50" id="ZFM-4w-I5O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="25"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginWithSender:" destination="AkS-do-OwB" eventType="touchUpInside" id="Jhq-9Z-Dmc"/>
+                                            <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="4Qe-pS-uV9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCD-t4-aPc">
+                                        <rect key="frame" x="0.0" y="100" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="DN0-kl-4NZ"/>
+                                            <constraint firstAttribute="width" constant="250" id="xBW-Og-Pw6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="25"/>
+                                        <state key="normal" title="Reset password">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="UEw-eb-oDx"/>
+                                            <segue destination="mr3-xC-9SP" kind="showDetail" id="uSO-Cb-WIr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jS9-ho-IcH" firstAttribute="leading" secondItem="afi-kk-9Km" secondAttribute="leading" constant="50" id="XZe-ok-VM6"/>
+                            <constraint firstItem="afi-kk-9Km" firstAttribute="bottom" secondItem="1rm-GR-UXn" secondAttribute="bottom" constant="100" id="spg-gj-oZ7"/>
+                            <constraint firstItem="jS9-ho-IcH" firstAttribute="top" secondItem="afi-kk-9Km" secondAttribute="top" constant="50" id="tUS-gT-SHk"/>
+                            <constraint firstItem="1rm-GR-UXn" firstAttribute="centerX" secondItem="fho-jC-7eC" secondAttribute="centerX" id="uep-6c-P8a"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="afi-kk-9Km"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="llo-BF-iRe"/>
+                    <navigationItem key="navigationItem" title="LOGIN" id="llo-BF-iRe"/>
                     <connections>
                         <outlet property="emailTextField" destination="ufd-hL-Uot" id="dMM-ib-cto"/>
                         <outlet property="passwordTextField" destination="iYt-ae-K7Z" id="EkP-Vm-sG8"/>
@@ -392,7 +418,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35g-Kk-ZPV">
-                                <rect key="frame" x="37" y="197" width="193" height="30"/>
+                                <rect key="frame" x="37" y="200" width="193" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
@@ -405,10 +431,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4m-Ov-owN">
-                                <rect key="frame" x="82" y="436" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4m-Ov-owN">
+                                <rect key="frame" x="82.333333333333314" y="486" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="FYo-OW-qhn"/>
+                                    <constraint firstAttribute="height" constant="50" id="txx-Ua-7fE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="25"/>
                                 <state key="normal" title="Reset password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,11 +449,15 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="mYS-TG-KAu"/>
-                                    <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="N6d-Xf-fpn"/>
+                                    <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="ih4-dx-gX2"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hdp-1e-LDh" firstAttribute="bottom" secondItem="V4m-Ov-owN" secondAttribute="bottom" constant="200" id="JGG-PC-zFD"/>
+                            <constraint firstItem="V4m-Ov-owN" firstAttribute="centerX" secondItem="na4-fK-l0o" secondAttribute="centerX" id="kpu-vS-nff"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hdp-1e-LDh"/>
                     </view>
                     <connections>
@@ -443,14 +476,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-cb-IfR">
-                                <rect key="frame" x="40" y="307" width="334" height="360"/>
+                                <rect key="frame" x="40.333333333333343" y="287" width="333.66666666666663" height="360"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="f92-QD-mty">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="f92-QD-mty">
+                                        <rect key="frame" x="0.0" y="0.0" width="333.66666666666669" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-tU-Ryh">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -475,7 +505,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-wZ-8Z0">
-                                                <rect key="frame" x="254" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="h5O-3T-uGD"/>
@@ -497,7 +527,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="li3-s1-xmN">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="140" width="333.66666666666669" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlS-Nq-B5z">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -521,7 +551,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-5Y-AJN">
-                                                <rect key="frame" x="254" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="Lua-DV-57W"/>
@@ -544,7 +574,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-1v-Xhx">
-                                        <rect key="frame" x="0.0" y="280" width="334" height="80"/>
+                                        <rect key="frame" x="0.0" y="280" width="333.66666666666669" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJV-sO-aYv">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -568,7 +598,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-on-SJC">
-                                                <rect key="frame" x="254" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="eIM-FF-scn"/>
@@ -593,15 +623,18 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConfApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-3W-2FY">
-                                <rect key="frame" x="97.333333333333329" y="104" width="219.66666666666669" height="163"/>
+                                <rect key="frame" x="97.333333333333329" y="104" width="219.66666666666669" height="143"/>
                                 <fontDescription key="fontDescription" name="RageItalic" family="Rage Italic" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7qx-h6-X1k" firstAttribute="bottom" secondItem="k0p-cb-IfR" secondAttribute="bottom" constant="20" id="JOz-7u-k5p"/>
+                            <constraint firstItem="7qx-h6-X1k" firstAttribute="bottom" secondItem="k0p-cb-IfR" secondAttribute="bottom" constant="40" id="JOz-7u-k5p"/>
                             <constraint firstItem="k0p-cb-IfR" firstAttribute="leading" secondItem="7qx-h6-X1k" secondAttribute="leading" constant="40" id="LJ2-1f-Gbp"/>
                             <constraint firstItem="Orb-3W-2FY" firstAttribute="top" secondItem="7qx-h6-X1k" secondAttribute="top" constant="40" id="PeZ-oi-CpI"/>
                             <constraint firstItem="67R-Ij-MD0" firstAttribute="top" secondItem="1ay-cp-Cos" secondAttribute="top" id="YUL-8N-mut"/>
@@ -1754,7 +1787,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>

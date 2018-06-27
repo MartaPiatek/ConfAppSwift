@@ -43,6 +43,7 @@
 		C1949FF320C1C62D006B9710 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1949FE020C1C62D006B9710 /* UserTableViewCell.swift */; };
 		C195F67220CD6EDA000C8757 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C195F67120CD6EDA000C8757 /* AgendaViewController.swift */; };
 		C195F67420CDA216000C8757 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C195F67320CDA215000C8757 /* EventDetailViewController.swift */; };
+		C199BA6020E25AC1007EAB3D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C199BA5F20E25AC1007EAB3D /* PhotoViewController.swift */; };
 		C1A03D3320CE8FAE00D092DC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3220CE8FAE00D092DC /* NoteViewController.swift */; };
 		C1A03D3520CE902F00D092DC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3420CE902F00D092DC /* Note.swift */; };
 		C1A03D3720CE95B700D092DC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A03D3620CE95B700D092DC /* NoteTableViewCell.swift */; };
@@ -93,6 +94,7 @@
 		C1949FE020C1C62D006B9710 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		C195F67120CD6EDA000C8757 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
 		C195F67320CDA215000C8757 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		C199BA5F20E25AC1007EAB3D /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C1A03D3220CE8FAE00D092DC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		C1A03D3420CE902F00D092DC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		C1A03D3620CE95B700D092DC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */,
 				C1D5507F20DD29A3005C25D8 /* PopUpViewController.swift */,
 				C1F4335820E0455600A4967C /* MenuViewController.swift */,
+				C199BA5F20E25AC1007EAB3D /* PhotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,7 +361,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		42A12F771067EBAC87109803 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -385,7 +388,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FSInteractiveMap/FSInteractiveMap.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -393,7 +395,6 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/NMPopUpViewSwift/NMPopUpViewSwift.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
@@ -407,7 +408,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSInteractiveMap.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
@@ -415,7 +415,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMPopUpViewSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
@@ -436,12 +435,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/NMPopUpViewSwift/NMPopUpViewSwift.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMPopUpViewSwift.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
@@ -462,6 +463,7 @@
 				C1949FE720C1C62D006B9710 /* Event.swift in Sources */,
 				C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */,
 				C130C7F420D1BBCA003EAECB /* AttachmentViewController.swift in Sources */,
+				C199BA6020E25AC1007EAB3D /* PhotoViewController.swift in Sources */,
 				C195F67220CD6EDA000C8757 /* AgendaViewController.swift in Sources */,
 				C1A03D3720CE95B700D092DC /* NoteTableViewCell.swift in Sources */,
 				C1949FED20C1C62D006B9710 /* ProfileViewController.swift in Sources */,
