@@ -10,6 +10,15 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
+   
+    @IBOutlet weak var noteButton: UIButton!
+    @IBOutlet weak var newsButton: UIButton!
+    @IBOutlet weak var speakersButton: UIButton!
+    
+    @IBOutlet weak var currenciesButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +26,14 @@ class MenuViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        chatButton.alignTextBelow(spacing: 6.0)
+        aboutButton.alignTextBelow(spacing: 6.0)
+        noteButton.alignTextBelow(spacing: 6.0)
+        newsButton.alignTextBelow(spacing: 6.0)
+        speakersButton.alignTextBelow(spacing: 6.0)
+        currenciesButton.alignTextBelow(spacing: 6.0)
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,4 +52,22 @@ class MenuViewController: UIViewController {
     }
     */
 
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
+    
+    
+}
+public extension UIButton {
+    
+    func alignTextBelow(spacing: CGFloat = 6.0) {
+        if let image = self.imageView?.image {
+            let imageSize: CGSize = image.size
+            self.titleEdgeInsets = UIEdgeInsetsMake(spacing, -imageSize.width, -(imageSize.height), 0.0)
+            let labelString = NSString(string: self.titleLabel!.text!)
+            let titleSize = labelString.size(withAttributes: [NSAttributedStringKey.font: self.titleLabel!.font])
+            self.imageEdgeInsets = UIEdgeInsetsMake(-(titleSize.height + spacing), 0.0, 0.0, -titleSize.width)
+        }
+    }
+    
 }

@@ -9,6 +9,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -476,21 +477,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-cb-IfR">
-                                <rect key="frame" x="40.333333333333343" y="287" width="333.66666666666663" height="360"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConfApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-3W-2FY">
+                                <rect key="frame" x="81.333333333333314" y="74" width="251" height="100.66666666666669"/>
+                                <fontDescription key="fontDescription" name="RageItalic" family="Rage Italic" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-cb-IfR">
+                                <rect key="frame" x="50" y="194.66666666666666" width="314" height="442.33333333333337"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="f92-QD-mty">
-                                        <rect key="frame" x="0.0" y="0.0" width="333.66666666666669" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f92-QD-mty">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKf-tU-Ryh">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Q3z-X2-7m4"/>
-                                                    <constraint firstAttribute="height" constant="80" id="Qjs-OY-oc5"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Q3z-X2-7m4"/>
+                                                    <constraint firstAttribute="height" constant="100" id="Qjs-OY-oc5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="18"/>
-                                                <state key="normal" image="speech-bubble">
+                                                <state key="normal" title="Chat" image="speech-bubble">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -505,13 +515,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoF-wZ-8Z0">
-                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="214" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="h5O-3T-uGD"/>
-                                                    <constraint firstAttribute="height" constant="80" id="mIM-lV-lOx"/>
+                                                    <constraint firstAttribute="width" constant="100" id="h5O-3T-uGD"/>
+                                                    <constraint firstAttribute="height" constant="100" id="mIM-lV-lOx"/>
                                                 </constraints>
-                                                <state key="normal" image="info">
+                                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                                                <state key="normal" title="Info" image="info">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -526,17 +537,18 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="li3-s1-xmN">
-                                        <rect key="frame" x="0.0" y="140" width="333.66666666666669" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="li3-s1-xmN">
+                                        <rect key="frame" x="0.0" y="171.33333333333334" width="314" height="100.00000000000003"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlS-Nq-B5z">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="3AH-NM-D3w"/>
-                                                    <constraint firstAttribute="width" constant="80" id="7AP-ey-iCH"/>
+                                                    <constraint firstAttribute="height" constant="100" id="3AH-NM-D3w"/>
+                                                    <constraint firstAttribute="width" constant="100" id="7AP-ey-iCH"/>
                                                 </constraints>
-                                                <state key="normal" image="notepad">
+                                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                                                <state key="normal" title="Notes" image="notepad">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -551,13 +563,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaO-5Y-AJN">
-                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="214" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Lua-DV-57W"/>
-                                                    <constraint firstAttribute="height" constant="80" id="rbd-Us-Wyf"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Lua-DV-57W"/>
+                                                    <constraint firstAttribute="height" constant="100" id="rbd-Us-Wyf"/>
                                                 </constraints>
-                                                <state key="normal" image="group">
+                                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                                                <state key="normal" title="Speakers" image="group">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -573,17 +586,18 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-1v-Xhx">
-                                        <rect key="frame" x="0.0" y="280" width="333.66666666666669" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-1v-Xhx">
+                                        <rect key="frame" x="0.0" y="342.33333333333337" width="314" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJV-sO-aYv">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="4ho-3a-QqN"/>
-                                                    <constraint firstAttribute="height" constant="80" id="XN1-JW-rI2"/>
+                                                    <constraint firstAttribute="width" constant="100" id="4ho-3a-QqN"/>
+                                                    <constraint firstAttribute="height" constant="100" id="XN1-JW-rI2"/>
                                                 </constraints>
-                                                <state key="normal" image="newspaper2">
+                                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                                                <state key="normal" title="News" image="newspaper2">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -598,13 +612,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u7-on-SJC">
-                                                <rect key="frame" x="253.66666666666663" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="214" y="0.0" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="eIM-FF-scn"/>
-                                                    <constraint firstAttribute="width" constant="80" id="iay-f2-t7c"/>
+                                                    <constraint firstAttribute="height" constant="100" id="eIM-FF-scn"/>
+                                                    <constraint firstAttribute="width" constant="100" id="iay-f2-t7c"/>
                                                 </constraints>
-                                                <state key="normal" image="money">
+                                                <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                                                <state key="normal" title="Converter" image="money">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -622,25 +637,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConfApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Orb-3W-2FY">
-                                <rect key="frame" x="97.333333333333329" y="104" width="219.66666666666669" height="143"/>
-                                <fontDescription key="fontDescription" name="RageItalic" family="Rage Italic" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="67R-Ij-MD0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7qx-h6-X1k" firstAttribute="bottom" secondItem="k0p-cb-IfR" secondAttribute="bottom" constant="40" id="JOz-7u-k5p"/>
-                            <constraint firstItem="k0p-cb-IfR" firstAttribute="leading" secondItem="7qx-h6-X1k" secondAttribute="leading" constant="40" id="LJ2-1f-Gbp"/>
-                            <constraint firstItem="Orb-3W-2FY" firstAttribute="top" secondItem="7qx-h6-X1k" secondAttribute="top" constant="40" id="PeZ-oi-CpI"/>
+                            <constraint firstItem="7qx-h6-X1k" firstAttribute="bottom" secondItem="k0p-cb-IfR" secondAttribute="bottom" constant="50" id="JOz-7u-k5p"/>
+                            <constraint firstItem="k0p-cb-IfR" firstAttribute="leading" secondItem="7qx-h6-X1k" secondAttribute="leading" constant="50" id="LJ2-1f-Gbp"/>
+                            <constraint firstItem="Orb-3W-2FY" firstAttribute="top" secondItem="7qx-h6-X1k" secondAttribute="top" constant="10" id="PeZ-oi-CpI"/>
                             <constraint firstItem="67R-Ij-MD0" firstAttribute="top" secondItem="1ay-cp-Cos" secondAttribute="top" id="YUL-8N-mut"/>
-                            <constraint firstItem="k0p-cb-IfR" firstAttribute="top" secondItem="Orb-3W-2FY" secondAttribute="bottom" constant="40" id="ekR-lr-jkm"/>
+                            <constraint firstItem="k0p-cb-IfR" firstAttribute="top" secondItem="Orb-3W-2FY" secondAttribute="bottom" constant="20" id="ekR-lr-jkm"/>
                             <constraint firstItem="67R-Ij-MD0" firstAttribute="trailing" secondItem="7qx-h6-X1k" secondAttribute="trailing" id="mHi-29-T5x"/>
-                            <constraint firstItem="7qx-h6-X1k" firstAttribute="trailing" secondItem="k0p-cb-IfR" secondAttribute="trailing" constant="40" id="rau-KM-olz"/>
+                            <constraint firstItem="7qx-h6-X1k" firstAttribute="trailing" secondItem="k0p-cb-IfR" secondAttribute="trailing" constant="50" id="rau-KM-olz"/>
                             <constraint firstItem="Orb-3W-2FY" firstAttribute="centerX" secondItem="1ay-cp-Cos" secondAttribute="centerX" id="tHF-a8-jSS"/>
                             <constraint firstItem="67R-Ij-MD0" firstAttribute="leading" secondItem="7qx-h6-X1k" secondAttribute="leading" id="tx8-LX-tjU"/>
                             <constraint firstAttribute="bottom" secondItem="67R-Ij-MD0" secondAttribute="bottom" id="u9Y-aT-vOz"/>
@@ -649,13 +655,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="DC1-BF-RNF">
                         <rightBarButtonItems>
-                            <barButtonItem title="My profile" image="profile" id="PWb-Pd-5s8">
+                            <barButtonItem title="My profile" image="user" id="PWb-Pd-5s8">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="pGu-AQ-Rbu" kind="show" id="INB-BY-gkU"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="simpline" id="QGL-ia-yDf">
+                            <barButtonItem title="Item" image="settings_bw" id="QGL-ia-yDf">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="tH3-hV-LrZ" kind="show" id="ceI-Qa-6eb"/>
@@ -668,7 +674,7 @@
                         <outlet property="chatButton" destination="LKf-tU-Ryh" id="93b-Cm-arO"/>
                         <outlet property="currenciesButton" destination="5u7-on-SJC" id="wFe-uH-nQj"/>
                         <outlet property="newsButton" destination="yJV-sO-aYv" id="VAa-F7-rNT"/>
-                        <outlet property="noteButton" destination="yJV-sO-aYv" id="3XW-BA-e3G"/>
+                        <outlet property="noteButton" destination="qlS-Nq-B5z" id="XIe-yc-8qZ"/>
                         <outlet property="speakersButton" destination="BaO-5Y-AJN" id="klD-3p-9Rx"/>
                     </connections>
                 </viewController>
@@ -1999,11 +2005,11 @@
         <image name="notepad" width="64" height="64"/>
         <image name="placeholder" width="32" height="32"/>
         <image name="plan" width="921" height="626"/>
-        <image name="profile" width="32" height="32"/>
-        <image name="simpline" width="24" height="24"/>
+        <image name="settings_bw" width="32" height="32"/>
         <image name="speaker" width="3476" height="5214"/>
         <image name="speech-bubble" width="64" height="64"/>
         <image name="twitter" width="60" height="60"/>
+        <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xQ6-hn-RC9"/>
