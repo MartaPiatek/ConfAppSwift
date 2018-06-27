@@ -999,6 +999,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-SN-mJq">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="732"/>
+                                <color key="tintColor" red="0.87058823529411766" green="0.35686274509803922" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker" translatesAutoresizingMaskIntoConstraints="NO" id="3j2-wQ-DwZ">
                                 <rect key="frame" x="87" y="131" width="240" height="266"/>
@@ -1210,7 +1211,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FZ6-oF-ruc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Notes" id="gDS-Ga-2op"/>
+                    <navigationItem key="navigationItem" title="Notes" id="gDS-Ga-2op">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="addNote-1" id="tFv-gl-mU6">
+                            <connections>
+                                <action selector="addNoteButton:" destination="Qha-IQ-VrC" id="R2j-aQ-Ywn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="h67-kY-n1U" id="CI2-1N-JRT"/>
                     </connections>
@@ -1987,6 +1994,7 @@
     </scenes>
     <resources>
         <image name="addNote" width="48" height="48"/>
+        <image name="addNote-1" width="32" height="32"/>
         <image name="agenda" width="32" height="32"/>
         <image name="background" width="471" height="668"/>
         <image name="background2" width="634" height="900"/>

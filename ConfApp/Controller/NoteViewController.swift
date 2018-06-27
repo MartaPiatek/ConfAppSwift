@@ -13,7 +13,7 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
     
     @IBOutlet var tableView: UITableView!
     
-    let ref = Database.database().reference(withPath: "notes")
+    let ref = Database.database().reference(withPath: "notes").child(Auth.auth().currentUser!.uid)
     
     var notes = [Note]()
     
@@ -28,8 +28,6 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NoteTableViewCell
         
         let noteItem = notes[indexPath.row]
-        //   cell.textLabel?.text = eventItem.title
-        //   cell.detailTextLabel?.text = eventItem.speaker
         
         cell.titleLabel.text = noteItem.eventTitle
         cell.contentLabel.text = noteItem.content
@@ -64,7 +62,46 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
     }
     
 
-    
+    @IBAction func addNoteButton(_ sender: AnyObject) {
+        
+        
+            let alert = UIAlertController(title: "New note",
+                                          message: "Add new note",
+                                          preferredStyle: .alert)
+            
+            let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+                guard let textFieldTitle = alert.textFields?[0],
+                    let textFieldContent = alert.textFields?[1],
+                    let textTitle = textFieldTitle.text,
+                 let textContent = textFieldContent.text else {return}
+                
+                
+                let userId = Auth.auth().currentUser!.uid
+                let noteItem = Note(user: userId, eventTitle: textTitle, content: textContent)
+                
+                
+                let userItemRef = self.ref.childByAutoId()
+                
+                userItemRef.setValue(noteItem.toAnyObject())
+                // self.tableView.reloadData()
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel",
+                                             style: .cancel)
+            
+        alert.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Title"
+        }
+        alert.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Note..."
+        }
+            
+            alert.addAction(saveAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true, completion: nil)
+        
+    }
     
     /*
     // MARK: - Navigation
