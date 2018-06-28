@@ -42,6 +42,12 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+   //     self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2.png")!)
+        tableView.backgroundColor = .clear
+        
+        assignbackground()
+        
+        
         addSpeakers()
         
         ref.observe(.value, with: { snapshot in
@@ -111,6 +117,27 @@ class UsersListViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
+    
+    
+    
+ func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
+    
     
     // MARK: - Navigation
 

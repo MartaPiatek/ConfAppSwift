@@ -22,7 +22,10 @@ class SpeakerDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+self.title = firstNameValue + " " + lastNameValue
+        assignbackground()
+        
         name.text = firstNameValue + " " + lastNameValue
         company.text = companyValue
         job.text = jobValue
@@ -34,7 +37,21 @@ class SpeakerDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
 
+    
     /*
     // MARK: - Navigation
 
