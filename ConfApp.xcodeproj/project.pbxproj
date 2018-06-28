@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
 		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
+		C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44F920E51204002B5481 /* AboutViewController.swift */; };
+		C12A44FC20E51B81002B5481 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44FB20E51B81002B5481 /* CalendarViewController.swift */; };
 		C130C7DB20D1290F003EAECB /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */; };
 		C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E420D16AC6003EAECB /* PhotoItem.swift */; };
 		C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E620D16B76003EAECB /* DefaultCollection.swift */; };
@@ -57,6 +59,8 @@
 		6D0276952C52B3FE32B174B3 /* Pods-ConfApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C12A44F920E51204002B5481 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		C12A44FB20E51B81002B5481 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7E420D16AC6003EAECB /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		C130C7E620D16B76003EAECB /* DefaultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollection.swift; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				C1D5507F20DD29A3005C25D8 /* PopUpViewController.swift */,
 				C1F4335820E0455600A4967C /* MenuViewController.swift */,
 				C199BA5F20E25AC1007EAB3D /* PhotoViewController.swift */,
+				C12A44F920E51204002B5481 /* AboutViewController.swift */,
+				C12A44FB20E51B81002B5481 /* CalendarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				C1A03D3720CE95B700D092DC /* NoteTableViewCell.swift in Sources */,
 				C1949FED20C1C62D006B9710 /* ProfileViewController.swift in Sources */,
 				C1949FF120C1C62D006B9710 /* UsersListViewController.swift in Sources */,
+				C12A44FC20E51B81002B5481 /* CalendarViewController.swift in Sources */,
 				C1949FF320C1C62D006B9710 /* UserTableViewCell.swift in Sources */,
 				C1949FEE20C1C62D006B9710 /* ResetPasswordViewController.swift in Sources */,
 				C1949FB720C1C42E006B9710 /* ViewController.swift in Sources */,
@@ -492,6 +499,7 @@
 				C1A03D3520CE902F00D092DC /* Note.swift in Sources */,
 				C1F4335920E0455600A4967C /* MenuViewController.swift in Sources */,
 				C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */,
+				C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */,
 				C1949FEA20C1C62D006B9710 /* HomeViewController.swift in Sources */,
 				C1949FE920C1C62D006B9710 /* EventsViewController.swift in Sources */,
 			);

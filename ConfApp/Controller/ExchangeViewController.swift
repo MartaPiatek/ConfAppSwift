@@ -34,8 +34,15 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let am = NSString(string: amount.text as! NSString)
+        
+        
+        assignbackground()
+        
+self.hideKeyboardWhenTappedAround()
+        
+        amount.setBottomBorder(borderColor: UIColor.black)
+        
+        let am = NSString(string: amount.text! as NSString)
         amountValue = am.doubleValue
         
         self.picker1.delegate = self
@@ -44,17 +51,23 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.picker2.delegate = self
         self.picker2.dataSource = self
         
+        
+        
         self.currencies = getLatestRates()
         
         print("Currencies")
         print(currencies.count)
+        
+        self.currenciesNames.append("polski złoty")
+        self.currenciesCodes.append("PLN")
+        self.currenciesRates.append(1.0)
         
         for i in 0...(currencies.count-1){
             self.currenciesNames.append(currencies[i].currency)
              self.currenciesCodes.append(currencies[i].code)
              self.currenciesRates.append(currencies[i].mid)
         }
-        self.pickerData = self.currenciesNames
+        self.pickerData = self.currenciesCodes
         
         
         
@@ -132,15 +145,9 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
        
     }
 
-    func convertCurrency(c1: Currency, c2: Currency, amo: Double) -> Double {
-        var result: Double
+    func convertCurrency(rate1: Double, rate2: Double, amo: Double) -> Double {
         
-        let rate1 = c1.mid
-        let rate2 = c2.mid
-        
-    result = amo * (rate1/rate2)
-        
-        return result
+        return amo * (rate1/rate2)
     }
     
     
@@ -168,11 +175,6 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 
                
                semaphore.signal()
-            /*
-                OperationQueue.main.addOperation( {
-                    self.picker1.reloadAllComponents()
-                     //self.picker2.reloadAllComponents()
-                })*/
             }
             
         })
@@ -203,10 +205,25 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return currencies
     }
     
+    
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
+    
     @IBAction func convert(sender: UIButton){
         
     //    let selectedc1 = pickerData[picker1.selectedRow(inComponent: 1)]
-        print("yo yo")
+        
         print(self.currencies[row1])
         print(self.amountValue)
    //     print(selectedc1)
@@ -215,7 +232,16 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         amountValue = am.doubleValue
         
         if self.amountValue > 0 {
-            result.text = String(convertCurrency(c1: self.currencies[row1], c2: self.currencies[row2], amo: amountValue))
+           
+            
+          let res = convertCurrency(rate1: self.currenciesRates[row1], rate2: self.currenciesRates[row2], amo: amountValue)
+            
+            
+            result.text = String((res * 100).rounded() / 100)
+            
+    
+            
+            
         }
     }
     
