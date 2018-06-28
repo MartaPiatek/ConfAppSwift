@@ -39,6 +39,25 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        assignbackground()
+        
+        tableView.backgroundColor = .clear
+        
+        
+       
+        self.tabBarController?.tabBar.backgroundColor = .clear
+        self.tabBarController?.tabBar.isTranslucent = true
+        
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+        
+      //  tableView.backgroundView = UIImageView(image: UIImage(named: "background2.png"))
+      //  tableView.backgroundView?.alpha = 0.55
+        
         ref.observe(.value, with: { snapshot in
 
             var dates: [String] = []
@@ -67,8 +86,22 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
       
     }
     
-
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -18,7 +18,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       self.title = "Mój profil"
+       self.title = "My profile"
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
         
         if let currentUser = Auth.auth().currentUser {
             nameLabel.text = currentUser.displayName

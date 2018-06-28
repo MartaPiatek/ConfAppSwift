@@ -27,6 +27,13 @@ class MenuViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.isTranslucent = true
         
+        self.tabBarController?.tabBar.backgroundImage = UIImage()
+        self.tabBarController?.tabBar.backgroundColor = .clear
+        self.tabBarController?.tabBar.isTranslucent = true
+        //self.tabBarController?.tabBar.barTintColor = UIColor(red: 242, green: 78, blue: 134, alpha: 255)
+        //self.tabBarController?.tabBar.tintColor = UIColor(red: 242, green: 78, blue: 134, alpha: 1)
+        
+        
         chatButton.alignTextBelow(spacing: 6.0)
         aboutButton.alignTextBelow(spacing: 6.0)
         noteButton.alignTextBelow(spacing: 6.0)
