@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
 		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
+		C10DF91220E68253005EC5DB /* ObserveEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10DF91120E68253005EC5DB /* ObserveEventTableViewCell.swift */; };
 		C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44F920E51204002B5481 /* AboutViewController.swift */; };
 		C12A44FC20E51B81002B5481 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44FB20E51B81002B5481 /* CalendarViewController.swift */; };
+		C12A44FE20E558D2002B5481 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44FD20E558D2002B5481 /* PlanViewController.swift */; };
 		C130C7DB20D1290F003EAECB /* SpeakerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */; };
 		C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E420D16AC6003EAECB /* PhotoItem.swift */; };
 		C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7E620D16B76003EAECB /* DefaultCollection.swift */; };
@@ -59,8 +61,10 @@
 		6D0276952C52B3FE32B174B3 /* Pods-ConfApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C10DF91120E68253005EC5DB /* ObserveEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveEventTableViewCell.swift; sourceTree = "<group>"; };
 		C12A44F920E51204002B5481 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C12A44FB20E51B81002B5481 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		C12A44FD20E558D2002B5481 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		C130C7DA20D1290F003EAECB /* SpeakerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7E420D16AC6003EAECB /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		C130C7E620D16B76003EAECB /* DefaultCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollection.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				C199BA5F20E25AC1007EAB3D /* PhotoViewController.swift */,
 				C12A44F920E51204002B5481 /* AboutViewController.swift */,
 				C12A44FB20E51B81002B5481 /* CalendarViewController.swift */,
+				C12A44FD20E558D2002B5481 /* PlanViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				C192C3B720C84E0B0093A276 /* CreateChannelTableViewCell.swift */,
 				C1A03D3620CE95B700D092DC /* NoteTableViewCell.swift */,
 				C18F719720D82D0000093973 /* AgendaTableViewCell.swift */,
+				C10DF91120E68253005EC5DB /* ObserveEventTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -401,6 +408,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
@@ -410,6 +418,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -421,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
@@ -441,6 +451,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/NMPopUpViewSwift/NMPopUpViewSwift.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
@@ -448,6 +459,7 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMPopUpViewSwift.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
@@ -493,12 +505,14 @@
 				C130C7E920D16C96003EAECB /* GalleryCollectionViewController.swift in Sources */,
 				C192C3BC20C8522C0093A276 /* ChatViewController.swift in Sources */,
 				C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */,
+				C10DF91220E68253005EC5DB /* ObserveEventTableViewCell.swift in Sources */,
 				C1D5508020DD29A3005C25D8 /* PopUpViewController.swift in Sources */,
 				C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */,
 				C1A03D3320CE8FAE00D092DC /* NoteViewController.swift in Sources */,
 				C1A03D3520CE902F00D092DC /* Note.swift in Sources */,
 				C1F4335920E0455600A4967C /* MenuViewController.swift in Sources */,
 				C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */,
+				C12A44FE20E558D2002B5481 /* PlanViewController.swift in Sources */,
 				C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */,
 				C1949FEA20C1C62D006B9710 /* HomeViewController.swift in Sources */,
 				C1949FE920C1C62D006B9710 /* EventsViewController.swift in Sources */,

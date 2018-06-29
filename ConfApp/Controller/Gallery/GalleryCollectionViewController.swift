@@ -23,10 +23,13 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+        assignbackground()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
        self.collectionView!.delegate = self
@@ -42,12 +45,22 @@ class GalleryCollectionViewController: UICollectionViewController {
         
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpPhoto") as! PhotoViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+       // popOverVC.imageView.image = UIImage(named: collection![indexPath.row].picture)
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+       
+        /*
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! PopUpViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
                popOverVC.imageView.image = UIImage(named: collection![indexPath.row].picture)
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
+ */
     }
     
     
@@ -56,7 +69,19 @@ class GalleryCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
     
 /*
     // MARK: - Navigation

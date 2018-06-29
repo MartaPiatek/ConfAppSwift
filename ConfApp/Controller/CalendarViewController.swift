@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController ,  UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    
+    let ref = Database.database().reference(withPath: "observe").child(Auth.auth().currentUser!.uid)
+    
+    var events = [Event]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,12 +26,86 @@ class CalendarViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
         
         assignbackground()
+        tableView.backgroundColor = .clear
+        
+        ref.observe(.value, with: { snapshot in
+            
+            var newItems: [Event] = []
+            
+            for child in snapshot.children {
+                
+                if let snapshot = child as? DataSnapshot,
+                    let eventItem = Event(snapshot: snapshot) {
+                    newItems.append(eventItem)
+                }
+            }
+            
+            self.events = newItems
+            self.tableView.reloadData()
+        })
+        
+        
     }
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let event = events[indexPath.row]
+            
+            let queryRef = self.ref.queryOrdered(byChild: "title")
+                .queryEqual(toValue: event.title)
+            
+            queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for snap in snapshot.children {
+                    let userSnap = snap as! DataSnapshot
+                    
+                    self.deleteEvent(id: String(userSnap.key))
+                    
+                }
+            })
+        }
+        
+        
+        
+        tableView.reloadData()
+    }
+    
+    func deleteEvent(id: String){
+        ref.child(id).removeValue()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+   
+    
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    return events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let cellIdentifier = "Cell"
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ObserveEventTableViewCell
+    
+    let eventItem = events[indexPath.row]
+    
+    cell.titleLabel.text = eventItem.title
+    cell.dateLabel.text = eventItem.date
+    cell.timeLabel.text = eventItem.time
+        
+    
+    
+    return cell
+    }
+    
     func assignbackground(){
         let background = UIImage(named: "background2")
         
@@ -38,7 +119,9 @@ class CalendarViewController: UIViewController {
         view.addSubview(imageView)
         self.view.sendSubview(toBack: imageView)
     }
-
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     /*
     // MARK: - Navigation
 

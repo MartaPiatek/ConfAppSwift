@@ -14,6 +14,9 @@ pod 'Firebase/Auth'
 pod 'JSQMessagesViewController'
 
 pod 'GoogleMaps'
+pod 'GooglePlaces'
+pod 'Alamofire', '~> 4.7.0'
+pod 'SwiftyJSON', '~> 4.0.0'
 
 pod 'UberRides'
 
