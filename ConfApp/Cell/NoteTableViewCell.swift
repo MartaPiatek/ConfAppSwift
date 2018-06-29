@@ -18,6 +18,7 @@ class NoteTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .blue
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

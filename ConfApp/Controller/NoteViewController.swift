@@ -36,9 +36,93 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let note = notes[indexPath.row]
+        
+        let alertController = UIAlertController(title: note.eventTitle, message: "Give new values to update", preferredStyle: .alert)
+        let updateAction = UIAlertAction(title: "Edit", style: .default){(_) in
+            
+            let title = alertController.textFields?[0].text
+            let content = alertController.textFields?[1].text
+            
+            
+            let queryRef = self.ref.queryOrdered(byChild: "eventTitle")
+                .queryEqual(toValue: note.eventTitle)
+            
+            queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for snap in snapshot.children {
+                    let userSnap = snap as! DataSnapshot
+                    
+                     self.updateNote(id: String(userSnap.key), title: title!, content: content!)
+                   
+                }
+            })
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addTextField{ (textField) in textField.text = note.eventTitle }
+        
+        alertController.addTextField{ (textField) in textField.text = note.content }
+        
+         alertController.addAction(cancelAction)
+        alertController.addAction(updateAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func updateNote(id: String, title: String, content: String){
+        
+        let note = [
+            "id": id,
+            "content": content,
+            "eventTitle": title,
+            "user": Auth.auth().currentUser!.uid
+        ]
+        
+        ref.child(id).setValue(note)
+        
+    }
+    
+    func deleteNote(id: String){
+        ref.child(id).removeValue()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+             let note = notes[indexPath.row]
+            
+            let queryRef = self.ref.queryOrdered(byChild: "eventTitle")
+                .queryEqual(toValue: note.eventTitle)
+            
+            queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for snap in snapshot.children {
+                    let userSnap = snap as! DataSnapshot
+                   
+                     self.deleteNote(id: String(userSnap.key))
+                    
+                }
+            })
+        }
+        
+        
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        assignbackground()
+          tableView.backgroundColor = .clear
+        
+        
         ref.observe(.value, with: { snapshot in
          
             var newItems: [Note] = []
@@ -102,7 +186,23 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
             present(alert, animated: true, completion: nil)
         
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
     /*
     // MARK: - Navigation
 
