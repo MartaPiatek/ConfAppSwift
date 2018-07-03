@@ -46,7 +46,7 @@ class CalendarViewController: UIViewController ,  UITableViewDataSource, UITable
         
         
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+  /*  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             
@@ -70,7 +70,7 @@ class CalendarViewController: UIViewController ,  UITableViewDataSource, UITable
         
         tableView.reloadData()
     }
-    
+    */
     func deleteEvent(id: String){
         ref.child(id).removeValue()
     }
@@ -104,6 +104,37 @@ class CalendarViewController: UIViewController ,  UITableViewDataSource, UITable
     
     
     return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, sourceView, completionHandler) in
+                
+                let event = self.events[indexPath.row]
+                
+                let queryRef = self.ref.queryOrdered(byChild: "title")
+                    .queryEqual(toValue: event.title)
+                
+                queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    for snap in snapshot.children {
+                        let userSnap = snap as! DataSnapshot
+                        
+                        self.deleteEvent(id: String(userSnap.key))
+                        
+                    }
+            })
+            
+            
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 242.0/255, green: 78.0/255, blue: 134.0/255, alpha: 1.0)
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipeConfiguration
     }
     
     func assignbackground(){
