@@ -36,7 +36,7 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ /*   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let note = notes[indexPath.row]
         
@@ -73,7 +73,7 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         present(alertController, animated: true, completion: nil)
         
     }
-    
+  */
     func updateNote(id: String, title: String, content: String){
         
         let note = [
@@ -91,7 +91,7 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         ref.child(id).removeValue()
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+/*    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             
@@ -115,7 +115,80 @@ class NoteViewController: UIViewController,  UITableViewDataSource, UITableViewD
         
         tableView.reloadData()
     }
+    */
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, sourceView, completionHandler) in
+            
+            let note = self.notes[indexPath.row]
+            
+            let queryRef = self.ref.queryOrdered(byChild: "eventTitle")
+                .queryEqual(toValue: note.eventTitle)
+            
+            queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                for snap in snapshot.children {
+                    let userSnap = snap as! DataSnapshot
+                    
+                    self.deleteNote(id: String(userSnap.key))
+                    
+                }
+            })
+            
+            
+            completionHandler(true)
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 242.0/255, green: 78.0/255, blue: 134.0/255, alpha: 1.0)
+        
+        let editAction = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
+            
+            let note = self.notes[indexPath.row]
+            
+            let alertController = UIAlertController(title: note.eventTitle, message: "Give new values to update", preferredStyle: .alert)
+            let updateAction = UIAlertAction(title: "Edit", style: .default){(_) in
+                
+                let title = alertController.textFields?[0].text
+                let content = alertController.textFields?[1].text
+                
+                
+                let queryRef = self.ref.queryOrdered(byChild: "eventTitle")
+                    .queryEqual(toValue: note.eventTitle)
+                
+                queryRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    for snap in snapshot.children {
+                        let userSnap = snap as! DataSnapshot
+                        
+                        self.updateNote(id: String(userSnap.key), title: title!, content: content!)
+                        
+                    }
+                })
+                
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            
+            alertController.addTextField{ (textField) in textField.text = note.eventTitle }
+            
+            alertController.addTextField{ (textField) in textField.text = note.content }
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(updateAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+        editAction.backgroundColor = UIColor(red: 34.0/255, green: 78.0/255, blue: 129.0/255, alpha: 1.0)
+        
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        
+        return swipeConfiguration
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
