@@ -1,50 +1,49 @@
 //
-//  AgendaViewController.swift
+//  NewsViewController.swift
 //  ConfApp
 //
-//  Created by Marta Piątek on 10.06.2018.
+//  Created by Marta Piątek on 29.06.2018.
 //  Copyright © 2018 Marta Piątek. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     
-    let ref = Database.database().reference(withPath: "events")
+    let ref = Database.database().reference(withPath: "news")
     
     var items = [Event]()
     var dates = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dates.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AgendaTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         
-        let eventDate = dates[indexPath.row]
         
-       cell.dayLabel?.text = "Day \(indexPath.row + 1) "
-            cell.dateLabel?.text = eventDate
+        
+        cell.textLabel?.text = "No news is good news"
         
         return cell
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         assignbackground()
         
         tableView.backgroundColor = .clear
         
         
-       
+        
         self.tabBarController?.tabBar.backgroundColor = .clear
         self.tabBarController?.tabBar.isTranslucent = true
         
@@ -55,34 +54,34 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.navigationBar.isTranslucent = true
         
         
-      
         
+     /*
         ref.observe(.value, with: { snapshot in
-
+            
             var dates: [String] = []
             
             for child in snapshot.children {
                 
                 if let snapshot = child as? DataSnapshot,
                     let eventItem = Event(snapshot: snapshot) {
-                
+                    
                     if !dates.contains(eventItem.date) {
                         dates.append(eventItem.date)
-                      
+                        
                     }
-                   
+                    
                 }
             }
             
-
+            
             self.dates = dates
             self.tableView.reloadData()
-        })
+        })*/
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-      
+        
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -102,10 +101,10 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         self.view.sendSubview(toBack: imageView)
     }
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+ /*   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         
         if let indexPath = tableView.indexPathForSelectedRow {
             let destinationController = segue.destination as! EventsViewController
@@ -113,6 +112,6 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             destinationController.eventDate = dates[indexPath.row]
         }
     }
+   */
     
-
 }

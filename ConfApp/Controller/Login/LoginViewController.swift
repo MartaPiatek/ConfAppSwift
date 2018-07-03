@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate  {
 
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -22,8 +22,12 @@ class LoginViewController: UIViewController {
         passwordTextField.setBottomBorder(borderColor: UIColor.white)
         emailTextField.setBottomBorder(borderColor: UIColor.white)
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.navigationItem.leftBarButtonItem?.title = "title"
+       // self.navigationController?.navigationItem.leftBarButtonItem?.title = "title"
      
+        self.emailTextField.text = "user@gmail.com"
+        self.passwordTextField.text = "user123"
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         
    /*
         Auth.auth().addStateDidChangeListener() { auth, user in
@@ -87,7 +91,12 @@ class LoginViewController: UIViewController {
         
         
     }
-
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
+/*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         let navVc = segue.destination as! UINavigationController
@@ -96,12 +105,12 @@ class LoginViewController: UIViewController {
         channelVc.senderDisplayName = Auth.auth().currentUser?.displayName
        // channelVc.senderId = Auth.auth().currentUser?.uid
     }
-
+*/
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.emailTextField.resignFirstResponder()
-         self.passwordTextField.resignFirstResponder()
-        return true
+        self.view.endEditing(true)
+        return false
     }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

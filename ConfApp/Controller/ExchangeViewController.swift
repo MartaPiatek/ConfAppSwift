@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var picker1: UIPickerView!
     @IBOutlet weak var picker2: UIPickerView!
@@ -41,7 +41,7 @@ class ExchangeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 self.hideKeyboardWhenTappedAround()
         
         amount.setBottomBorder(borderColor: UIColor.black)
-        
+        self.amount.delegate = self
         let am = NSString(string: amount.text! as NSString)
         amountValue = am.doubleValue
         
@@ -205,7 +205,11 @@ self.hideKeyboardWhenTappedAround()
         return currencies
     }
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+
     func assignbackground(){
         let background = UIImage(named: "background2")
         

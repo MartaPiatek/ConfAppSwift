@@ -8,7 +8,7 @@ target 'ConfApp' do
   # Pods for ConfApp
 pod 'Firebase/Core'
 pod 'Firebase/Database'
-pod 'Firebase/Storage'
+#pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 
 pod 'JSQMessagesViewController'
@@ -27,6 +27,6 @@ pod 'FacebookLogin'
 
 pod 'TwitterKit'
 
-pod 'FSInteractiveMap'
-pod 'NMPopUpViewSwift'
+#pod 'FSInteractiveMap'
+#pod 'NMPopUpViewSwift'
 end

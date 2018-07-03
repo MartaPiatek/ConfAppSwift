@@ -40,7 +40,12 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        assignbackground()
+        tableView.backgroundColor = .clear
+        
+        self.title = eventDate
+        
         addEvents()
         ref.observe(.value, with: { snapshot in
           
@@ -71,7 +76,9 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
     
  //   @IBAction func addButtonDidTouch(_ sender: AnyObject) {
     func addEvents(){
@@ -120,6 +127,19 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
       
     }
 
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
     
    // MARK: - Navigation
 

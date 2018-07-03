@@ -16,12 +16,19 @@ class PopUpViewController: UIViewController {
     @IBOutlet var bigView: UIView!
     var item: PhotoItem?
     
+
+    
     @IBAction func closePopUp(_ sender: Any) {
           self.removeAnimate()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        
        self.showAnimate()
+        
+        
         
         smallView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         bigView.backgroundColor = UIColor.black.withAlphaComponent(0.8)

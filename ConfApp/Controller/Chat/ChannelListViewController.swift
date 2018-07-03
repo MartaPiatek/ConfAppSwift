@@ -47,6 +47,14 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    //  assignbackground()
+    //   tableView.backgroundColor = .clear
+        
+   //     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    //    self.navigationController?.navigationBar.shadowImage = UIImage()
+    //    self.navigationController?.navigationBar.backgroundColor = .clear
+     //   self.navigationController?.navigationBar.isTranslucent = true
+        
          observeChannels()
     }
 
@@ -92,6 +100,7 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
             cell.textLabel?.text = channels[(indexPath as NSIndexPath).row].name
         }
         
+      
         return cell
     }
     
@@ -101,6 +110,11 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
             self.performSegue(withIdentifier: "ShowChannel", sender: channel)
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+      //  cell.backgroundColor = .clear
+    }
+    
     
     @IBAction func createChannel(_ sender: AnyObject) {
         if let name = newChannelTextField?.text {
@@ -122,6 +136,20 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
             chatVc.channel = channel
             chatVc.channelRef = channelRef.child(channel.id)
         }
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
     }
     
 }

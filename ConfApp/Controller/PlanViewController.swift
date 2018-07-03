@@ -1,31 +1,24 @@
 //
-//  HomeViewController.swift
+//  PlanViewController.swift
 //  ConfApp
 //
-//  Created by Marta Piątek on 13.05.2018.
+//  Created by Marta Piątek on 28.06.2018.
 //  Copyright © 2018 Marta Piątek. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class PlanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        assignbackground()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.isTranslucent = true
-        
-        if Reachability.isConnectedToNetwork(){
-            print("Internet Connection Available!")
-        }else{
-            print("Internet Connection not Available!")
-            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +26,20 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -43,7 +49,5 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
+
 }

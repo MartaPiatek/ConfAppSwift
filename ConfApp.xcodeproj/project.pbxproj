@@ -10,6 +10,8 @@
 		C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */; };
 		C100F1D920C721960033B9F2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100F1D820C721960033B9F2 /* Currency.swift */; };
 		C10DF91220E68253005EC5DB /* ObserveEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10DF91120E68253005EC5DB /* ObserveEventTableViewCell.swift */; };
+		C10DF91420E6B42A005EC5DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10DF91320E6B42A005EC5DB /* SettingsViewController.swift */; };
+		C10DF91620E6B906005EC5DB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10DF91520E6B906005EC5DB /* NewsViewController.swift */; };
 		C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44F920E51204002B5481 /* AboutViewController.swift */; };
 		C12A44FC20E51B81002B5481 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44FB20E51B81002B5481 /* CalendarViewController.swift */; };
 		C12A44FE20E558D2002B5481 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A44FD20E558D2002B5481 /* PlanViewController.swift */; };
@@ -20,6 +22,7 @@
 		C130C7EB20D16E07003EAECB /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7EA20D16E07003EAECB /* GalleryCollectionViewCell.swift */; };
 		C130C7ED20D17B60003EAECB /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */; };
 		C130C7F420D1BBCA003EAECB /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */; };
+		C14E17E820EBAA31002884F4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E17E720EBAA31002884F4 /* Reachability.swift */; };
 		C18F719820D82D0000093973 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F719720D82D0000093973 /* AgendaTableViewCell.swift */; };
 		C18F719A20D839FD00093973 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18F719920D839FD00093973 /* Main.storyboard */; };
 		C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3B520C84CF50093A276 /* ChannelListViewController.swift */; };
@@ -62,6 +65,8 @@
 		C100F1D620C707CD0033B9F2 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		C100F1D820C721960033B9F2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C10DF91120E68253005EC5DB /* ObserveEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserveEventTableViewCell.swift; sourceTree = "<group>"; };
+		C10DF91320E6B42A005EC5DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C10DF91520E6B906005EC5DB /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		C12A44F920E51204002B5481 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C12A44FB20E51B81002B5481 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C12A44FD20E558D2002B5481 /* PlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		C130C7EA20D16E07003EAECB /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
+		C14E17E720EBAA31002884F4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C18F719720D82D0000093973 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		C18F719920D839FD00093973 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C192C3B520C84CF50093A276 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				C1949FBB20C1C42F006B9710 /* Assets.xcassets */,
 				C1949FBD20C1C42F006B9710 /* LaunchScreen.storyboard */,
 				C1949FC020C1C42F006B9710 /* Info.plist */,
+				C14E17E720EBAA31002884F4 /* Reachability.swift */,
 			);
 			path = ConfApp;
 			sourceTree = "<group>";
@@ -265,6 +272,8 @@
 				C12A44F920E51204002B5481 /* AboutViewController.swift */,
 				C12A44FB20E51B81002B5481 /* CalendarViewController.swift */,
 				C12A44FD20E558D2002B5481 /* PlanViewController.swift */,
+				C10DF91320E6B42A005EC5DB /* SettingsViewController.swift */,
+				C10DF91520E6B906005EC5DB /* NewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -452,7 +461,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ConfApp/Pods-ConfApp-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/NMPopUpViewSwift/NMPopUpViewSwift.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
@@ -460,7 +468,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMPopUpViewSwift.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
@@ -480,9 +487,11 @@
 				C18F719820D82D0000093973 /* AgendaTableViewCell.swift in Sources */,
 				C1949FE720C1C62D006B9710 /* Event.swift in Sources */,
 				C130C7E720D16B76003EAECB /* DefaultCollection.swift in Sources */,
+				C14E17E820EBAA31002884F4 /* Reachability.swift in Sources */,
 				C130C7F420D1BBCA003EAECB /* AttachmentViewController.swift in Sources */,
 				C199BA6020E25AC1007EAB3D /* PhotoViewController.swift in Sources */,
 				C195F67220CD6EDA000C8757 /* AgendaViewController.swift in Sources */,
+				C10DF91420E6B42A005EC5DB /* SettingsViewController.swift in Sources */,
 				C1A03D3720CE95B700D092DC /* NoteTableViewCell.swift in Sources */,
 				C1949FED20C1C62D006B9710 /* ProfileViewController.swift in Sources */,
 				C1949FF120C1C62D006B9710 /* UsersListViewController.swift in Sources */,
@@ -514,6 +523,7 @@
 				C130C7E520D16AC6003EAECB /* PhotoItem.swift in Sources */,
 				C12A44FE20E558D2002B5481 /* PlanViewController.swift in Sources */,
 				C12A44FA20E51205002B5481 /* AboutViewController.swift in Sources */,
+				C10DF91620E6B906005EC5DB /* NewsViewController.swift in Sources */,
 				C1949FEA20C1C62D006B9710 /* HomeViewController.swift in Sources */,
 				C1949FE920C1C62D006B9710 /* EventsViewController.swift in Sources */,
 			);

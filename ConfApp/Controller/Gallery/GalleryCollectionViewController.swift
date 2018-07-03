@@ -23,12 +23,19 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        assignbackground()
+       assignbackground()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = .clear
-        self.navigationController?.navigationBar.isTranslucent = true
+     //   self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+      //  self.navigationController?.navigationBar.shadowImage = UIImage()
+      //  self.navigationController?.navigationBar.backgroundColor = .clear
+     //   self.navigationController?.navigationBar.isTranslucent = true
+        
+        
+        self.tabBarController?.tabBar.backgroundImage = UIImage()
+        self.tabBarController?.tabBar.backgroundColor = .clear
+        self.tabBarController?.tabBar.isTranslucent = true
+        
+        
         
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 

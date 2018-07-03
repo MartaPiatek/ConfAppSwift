@@ -16,6 +16,7 @@ struct Note {
     let user: String
     let eventTitle: String
     let content: String
+    //let id: String
     
     let key: String
     

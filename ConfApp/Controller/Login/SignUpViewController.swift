@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController {
         emailTextField.setBottomBorder(borderColor: UIColor.white)
         passwordTextField.setBottomBorder(borderColor: UIColor.white)
 
+        self.hideKeyboardWhenTappedAround()
+         self.nameTextField.delegate = self
+         self.emailTextField.delegate = self
+         self.passwordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +94,10 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
 }
 

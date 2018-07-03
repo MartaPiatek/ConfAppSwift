@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import GoogleMaps
 import TwitterKit
-import Photos
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
     //    UINavigationBar.appearance().backgroundColor = .clear
      //   UINavigationBar.appearance().isTranslucent = true
         
@@ -27,8 +27,8 @@ let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
         
         FirebaseApp.configure()
          GMSServices.provideAPIKey(googleApiKey)
-       
-   //     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Skia", size: 24)!]
+       GMSPlacesClient.provideAPIKey(googleApiKey)
+    
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Skia", size: 20)!], for: UIControlState.normal)
 

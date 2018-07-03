@@ -53,6 +53,14 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       // assignbackground()
+        
+      //  self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+     //   self.navigationController?.navigationBar.shadowImage = UIImage()
+     //   self.navigationController?.navigationBar.backgroundColor = .clear
+     //   self.navigationController?.navigationBar.isTranslucent = true
+        
+        //tableView.backgroundColor = .clear
         
         
        self.senderId = Auth.auth().currentUser?.uid
@@ -176,6 +184,19 @@ class ChatViewController: JSQMessagesViewController {
         
         isTyping = textView.text != ""
 
+    }
+    func assignbackground(){
+        let background = UIImage(named: "background2")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.55
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
     }
     
     private func observeTyping(){
