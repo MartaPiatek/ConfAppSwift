@@ -23,6 +23,7 @@
 		C130C7ED20D17B60003EAECB /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */; };
 		C130C7F420D1BBCA003EAECB /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */; };
 		C14E17E820EBAA31002884F4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E17E720EBAA31002884F4 /* Reachability.swift */; };
+		C14E17EA20EBDBB0002884F4 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E17E920EBDBB0002884F4 /* GalleryViewController.swift */; };
 		C18F719820D82D0000093973 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F719720D82D0000093973 /* AgendaTableViewCell.swift */; };
 		C18F719A20D839FD00093973 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18F719920D839FD00093973 /* Main.storyboard */; };
 		C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192C3B520C84CF50093A276 /* ChannelListViewController.swift */; };
@@ -78,6 +79,7 @@
 		C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
 		C14E17E720EBAA31002884F4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C14E17E920EBDBB0002884F4 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		C18F719720D82D0000093973 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 		C18F719920D839FD00093973 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C192C3B520C84CF50093A276 /* ChannelListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				C130C7E820D16C96003EAECB /* GalleryCollectionViewController.swift */,
 				C130C7EA20D16E07003EAECB /* GalleryCollectionViewCell.swift */,
 				C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */,
+				C14E17E920EBDBB0002884F4 /* GalleryViewController.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				C192C3B620C84CF50093A276 /* ChannelListViewController.swift in Sources */,
 				C10DF91220E68253005EC5DB /* ObserveEventTableViewCell.swift in Sources */,
 				C1D5508020DD29A3005C25D8 /* PopUpViewController.swift in Sources */,
+				C14E17EA20EBDBB0002884F4 /* GalleryViewController.swift in Sources */,
 				C100F1D720C707CD0033B9F2 /* ExchangeViewController.swift in Sources */,
 				C1A03D3320CE8FAE00D092DC /* NoteViewController.swift in Sources */,
 				C1A03D3520CE902F00D092DC /* Note.swift in Sources */,

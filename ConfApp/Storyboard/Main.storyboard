@@ -898,7 +898,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ye-uK-HlI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7648.8000000000002" y="1448.7256371814094"/>
+            <point key="canvasLocation" x="7887" y="1236"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="S7M-gB-IAG">
@@ -959,7 +959,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyJ-go-CtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9307.246376811594" y="2446.467391304348"/>
+            <point key="canvasLocation" x="10213.04347826087" y="2446.467391304348"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="fvn-Ju-2vJ">
@@ -1014,7 +1014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eag-d2-dsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10478.260869565218" y="2457.880434782609"/>
+            <point key="canvasLocation" x="11385.507246376812" y="2457.880434782609"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="U4e-v6-VCA">
@@ -2142,7 +2142,7 @@
                         <segue destination="xcC-kK-eW6" kind="relationship" relationship="viewControllers" id="nhf-7K-6s8"/>
                         <segue destination="r1W-px-78D" kind="relationship" relationship="viewControllers" id="nxf-MI-Ikn"/>
                         <segue destination="gRG-ak-xXU" kind="relationship" relationship="viewControllers" id="fwR-0O-56a"/>
-                        <segue destination="v3B-cl-BZ3" kind="relationship" relationship="viewControllers" id="Lzl-9s-7V1"/>
+                        <segue destination="LeG-cz-cWR" kind="relationship" relationship="viewControllers" id="8B6-Ig-BYy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJN-Xl-4UX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2250,6 +2250,74 @@
             </objects>
             <point key="canvasLocation" x="6376.811594202899" y="2419.5652173913045"/>
         </scene>
+        <!--Gallery-->
+        <scene sceneID="3JT-OH-9Jp">
+            <objects>
+                <viewController id="WIq-0f-BYa" customClass="GalleryViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fX3-qj-hfc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8sg-gQ-AO5">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Uvz-55-yby">
+                                    <size key="itemSize" width="185" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="39c-f0-84r" customClass="GalleryCollectionViewCell" customModule="ConfApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="185" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-FG-mRy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="CLq-GX-JiD"/>
+                                                        <constraint firstAttribute="width" constant="185" id="baT-gl-o21"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Wfo-FG-mRy" firstAttribute="top" secondItem="39c-f0-84r" secondAttribute="top" id="EgW-h1-9kC"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wfo-FG-mRy" secondAttribute="trailing" id="FXH-4u-Gbd"/>
+                                            <constraint firstItem="Wfo-FG-mRy" firstAttribute="leading" secondItem="39c-f0-84r" secondAttribute="leading" id="OBT-Js-Mrx"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="Wfo-FG-mRy" id="fwJ-uV-T91"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="WIq-0f-BYa" id="saS-v7-Llg"/>
+                                    <outlet property="delegate" destination="WIq-0f-BYa" id="2la-rZ-zix"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8sg-gQ-AO5" firstAttribute="top" secondItem="1hD-7f-Gch" secondAttribute="top" id="B1U-GN-y8f"/>
+                            <constraint firstItem="1hD-7f-Gch" firstAttribute="trailing" secondItem="8sg-gQ-AO5" secondAttribute="trailing" id="KNp-mg-7Rt"/>
+                            <constraint firstItem="1hD-7f-Gch" firstAttribute="bottom" secondItem="8sg-gQ-AO5" secondAttribute="bottom" id="r7q-ZZ-fMs"/>
+                            <constraint firstItem="8sg-gQ-AO5" firstAttribute="leading" secondItem="1hD-7f-Gch" secondAttribute="leading" id="y8S-bs-F8i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1hD-7f-Gch"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gallery" id="pB9-s4-ivb"/>
+                    <connections>
+                        <outlet property="collectionView" destination="8sg-gQ-AO5" id="SLQ-5d-zp2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPP-Ub-zA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7093" y="2418"/>
+        </scene>
         <!--Gallery Detail View Controller-->
         <scene sceneID="rf0-OK-u49">
             <objects>
@@ -2350,6 +2418,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qwu-Md-JnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6378" y="1681"/>
+        </scene>
+        <!--Gallery-->
+        <scene sceneID="hIS-8f-fbT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LeG-cz-cWR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gallery" image="gallery-2" id="Eey-WU-sJj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X1D-CX-mBB">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WIq-0f-BYa" kind="relationship" relationship="rootViewController" id="Zf7-3g-cOo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cir-E9-9CC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7093" y="1681"/>
         </scene>
     </scenes>
     <resources>

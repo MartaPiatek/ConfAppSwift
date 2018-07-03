@@ -26,20 +26,28 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    self.showAnimate()
-       
+        
         smallView.backgroundColor = UIColor.black.withAlphaComponent(0.0)
         bigView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         closeButton.addTarget(self, action: #selector(PhotoViewController.closePopUp(_:)), for: .touchUpInside)
+       
+    
         
         mainScrollView.frame = view.frame
-        for i in 0..<collection.count {
+        
+        
+        for i in photoNo..<collection.count {
+            print ("PHOTO NO \(photoNo)")
     let     imageView = UIImageView()
+            
+          //   imageView.image = UIImage(named: collection[photoNo].picture)
+            
             imageView.image = UIImage(named: collection[i].picture)
             imageView.contentMode = .scaleAspectFit
-            let xPosition = self.view.frame.width * CGFloat(i)
+            let xPosition = self.view.frame.width * CGFloat(i-photoNo)
             imageView.frame = CGRect(x: xPosition, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
             
-            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
+            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i-photoNo + 1)
             
             mainScrollView.addSubview(imageView)
             
@@ -48,6 +56,9 @@ class PhotoViewController: UIViewController {
 
             self.view.addSubview(closeButton)
           
+            if i == (collection.count-1) {
+                
+            }
            
         }
         
