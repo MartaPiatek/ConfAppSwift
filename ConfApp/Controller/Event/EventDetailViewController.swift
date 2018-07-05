@@ -11,8 +11,9 @@ import Firebase
 import FacebookShare
 import TwitterKit
 import EventKit
+import MessageUI
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var speaker: UILabel!
@@ -263,13 +264,15 @@ class EventDetailViewController: UIViewController {
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 7.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {(isCompleted) in
             toastLabel.removeFromSuperview()
         })
     }
     
+    
+   
     /*
     // MARK: - Navigation
 
