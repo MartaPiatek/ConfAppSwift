@@ -1524,7 +1524,7 @@
                                         <connections>
                                             <action selector="registerAccountWithSender:" destination="Y0M-OI-h8Q" eventType="touchUpInside" id="a95-Py-Dcc"/>
                                             <action selector="resetPasswordWithSender:" destination="mr3-xC-9SP" eventType="touchUpInside" id="OVK-aN-rUC"/>
-                                            <action selector="showDirection:" destination="wTc-sq-zsm" eventType="touchUpInside" id="xHp-UL-NlQ"/>
+                                            <action selector="showDirection:" destination="wTc-sq-zsm" eventType="touchUpInside" id="YB7-4t-tWx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LB3-Pn-Yys">
@@ -1545,6 +1545,20 @@
                                             <segue destination="87M-qG-hb7" kind="show" id="Ihq-vm-ywB"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpK-Zy-wpj">
+                                        <rect key="frame" x="117" y="69" width="181" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular_Bold" family="Skia" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLw-UT-kHv">
+                                        <rect key="frame" x="117" y="96" width="181" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Skia-Regular_Bold" family="Skia" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -1560,6 +1574,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="yUy-w0-QW0"/>
                     <connections>
+                        <outlet property="distanceL" destination="TpK-Zy-wpj" id="2MK-0p-MdC"/>
+                        <outlet property="distanceLabel" destination="KLw-UT-kHv" id="Q7B-OD-Jpp"/>
                         <outlet property="googleMaps" destination="NaG-Kc-g3X" id="zLq-7G-YXJ"/>
                         <outlet property="planButton" destination="LB3-Pn-Yys" id="VqJ-Jh-ZeN"/>
                         <outlet property="routeButton" destination="ind-fI-RuT" id="7hO-f8-C0e"/>
@@ -1567,7 +1583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agk-xd-fgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4705" y="2419"/>
+            <point key="canvasLocation" x="4704.347826086957" y="2417.934782608696"/>
         </scene>
         <!--Speaker Detail View Controller-->
         <scene sceneID="hby-3z-V9a">
