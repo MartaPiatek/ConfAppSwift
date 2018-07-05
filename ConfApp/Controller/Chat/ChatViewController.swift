@@ -53,15 +53,18 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // assignbackground()
+        assignbackground()
         
-      //  self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-     //   self.navigationController?.navigationBar.shadowImage = UIImage()
-     //   self.navigationController?.navigationBar.backgroundColor = .clear
-     //   self.navigationController?.navigationBar.isTranslucent = true
+     //   self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.isTranslucent = true
         
         //tableView.backgroundColor = .clear
+        self.collectionView.backgroundColor = .clear
         
+        
+      
         
        self.senderId = Auth.auth().currentUser?.uid
         
@@ -89,12 +92,15 @@ class ChatViewController: JSQMessagesViewController {
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+      // return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor(red: 242.0/255, green: 78.0/255, blue: 134.0/255, alpha: 1.0))
     }
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+      //  return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        return bubbleImageFactory!.incomingMessagesBubbleImage(with: UIColor(red: 34.0/255, green: 78.0/255, blue: 129.0/255, alpha: 1.0))
+    
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
         let message = messages[indexPath.item]
@@ -111,7 +117,7 @@ class ChatViewController: JSQMessagesViewController {
         }
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
-        return 15
+        return 20
     }
     override func collectionView(_ collectionView: JSQMessagesCollectionView?, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString? {
         let message = messages[indexPath.item]
@@ -139,7 +145,7 @@ class ChatViewController: JSQMessagesViewController {
         if message.senderId == senderId {
             cell.textView?.textColor = UIColor.white
         } else {
-            cell.textView?.textColor = UIColor.black
+            cell.textView?.textColor = UIColor.white
         }
         return cell
     }

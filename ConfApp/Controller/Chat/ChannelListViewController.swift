@@ -47,8 +47,10 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    //  assignbackground()
-    //   tableView.backgroundColor = .clear
+  //    assignbackground()
+       tableView.backgroundColor = .white
+        
+       // self.tableView.delegate = self
         
    //     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     //    self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -92,6 +94,8 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
         let reuseIdentifier = (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue ? "NewChannel" : "ExistingChannel"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
+        cell.backgroundColor = .clear
+        
         if (indexPath as NSIndexPath).section == Section.createNewChannelSection.rawValue {
             if let createNewChannelCell = cell as? CreateChannelTableViewCell {
                 newChannelTextField = createNewChannelCell.newChannelNameField
@@ -112,7 +116,8 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-      //  cell.backgroundColor = .clear
+       cell.backgroundColor = .clear
+        
     }
     
     
@@ -137,6 +142,7 @@ class ChannelListViewController: UIViewController, UITableViewDataSource, UITabl
             chatVc.channelRef = channelRef.child(channel.id)
         }
     }
+
     
     func assignbackground(){
         let background = UIImage(named: "background2")
