@@ -13,6 +13,7 @@ import TwitterKit
 import EventKit
 import MessageUI
 
+
 class EventDetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var eventTitle: UILabel!
@@ -96,9 +97,8 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
     }
 
       @IBAction func facebookButton(_ sender: AnyObject) {
-   // let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
         
-        guard let selectedImage = UIImage(named: "background.jpg") else {
+      guard let selectedImage = UIImage(named: "logo2.jpg") else {
             return
         }
         let photo = Photo(image: selectedImage, userGenerated: false)
@@ -110,13 +110,16 @@ class EventDetailViewController: UIViewController, MFMailComposeViewControllerDe
         } catch {
             print(error)
         }
-  //  }
+        
+
+        
+  
 }
     
       @IBAction func twitterButton(_ sender: AnyObject) {
         //let twitterAction = UIAlertAction(title: "Twitter", style: .default) { (action) in
             
-            guard let selectedImage = UIImage(named: "background.jpg") else {
+            guard let selectedImage = UIImage(named: "logo2.jpg") else {
                 return
             }
             
