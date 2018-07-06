@@ -83,6 +83,36 @@ self.title = firstNameValue + " " + lastNameValue
         }
     }
     
+     @IBAction func showFb(_ sender: Any) {
+        
+        let fbURLWeb: NSURL = NSURL(string: "https://www.facebook.com/marcin.stachowiak.16")!
+        let fbURLID: NSURL = NSURL(string: "fb://profile/100002309753520")!
+        
+        if(UIApplication.shared.canOpenURL(fbURLID as URL)){
+            // FB installed
+            UIApplication.shared.openURL(fbURLID as URL)
+        } else {
+            // FB is not installed, open in safari
+            UIApplication.shared.openURL(fbURLWeb as URL)
+        }
+        
+    }
+    
+     @IBAction func showTwitter(_ sender: Any) {
+       
+        let TwitterURLWeb: NSURL = NSURL(string: "https://twitter.com/stachowiak_io")!
+
+            UIApplication.shared.openURL(TwitterURLWeb as URL)
+        
+    }
+    @IBAction func showLinkedIn(_ sender: Any) {
+        
+        let linkedInURLWeb: NSURL = NSURL(string: "https://www.linkedin.com/in/stachowiakmarcin/")!
+        
+        UIApplication.shared.openURL(linkedInURLWeb as URL)
+        
+    }
+  
     /*
     // MARK: - Navigation
 
