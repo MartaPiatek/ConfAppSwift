@@ -22,6 +22,7 @@
 		C130C7EB20D16E07003EAECB /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7EA20D16E07003EAECB /* GalleryCollectionViewCell.swift */; };
 		C130C7ED20D17B60003EAECB /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */; };
 		C130C7F420D1BBCA003EAECB /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */; };
+		C132213E20EF71CD008E78E9 /* SettingsContentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C132213D20EF71CD008E78E9 /* SettingsContentTableViewController.swift */; };
 		C14E17E820EBAA31002884F4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E17E720EBAA31002884F4 /* Reachability.swift */; };
 		C14E17EA20EBDBB0002884F4 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14E17E920EBDBB0002884F4 /* GalleryViewController.swift */; };
 		C18F719820D82D0000093973 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F719720D82D0000093973 /* AgendaTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		C130C7EA20D16E07003EAECB /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C130C7EC20D17B60003EAECB /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		C130C7F320D1BBCA003EAECB /* AttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
+		C132213D20EF71CD008E78E9 /* SettingsContentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContentTableViewController.swift; sourceTree = "<group>"; };
 		C14E17E720EBAA31002884F4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C14E17E920EBDBB0002884F4 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		C18F719720D82D0000093973 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				C12A44FD20E558D2002B5481 /* PlanViewController.swift */,
 				C10DF91320E6B42A005EC5DB /* SettingsViewController.swift */,
 				C10DF91520E6B906005EC5DB /* NewsViewController.swift */,
+				C132213D20EF71CD008E78E9 /* SettingsContentTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				C1949FEE20C1C62D006B9710 /* ResetPasswordViewController.swift in Sources */,
 				C1949FB720C1C42E006B9710 /* ViewController.swift in Sources */,
 				C1949FB520C1C42E006B9710 /* AppDelegate.swift in Sources */,
+				C132213E20EF71CD008E78E9 /* SettingsContentTableViewController.swift in Sources */,
 				C1949FF220C1C62D006B9710 /* EventsTableViewCell.swift in Sources */,
 				C130C7DB20D1290F003EAECB /* SpeakerDetailViewController.swift in Sources */,
 				C130C7ED20D17B60003EAECB /* GalleryDetailViewController.swift in Sources */,

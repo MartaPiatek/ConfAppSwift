@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
             try Auth.auth().signOut()
         } catch {
             
-            let alertController = UIAlertController(title: "Błąd wylogowania", message: error.localizedDescription, preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             
             alertController.addAction(okayAction)

@@ -804,7 +804,7 @@
                             <barButtonItem title="Item" image="settings_bw" id="QGL-ia-yDf">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="tH3-hV-LrZ" kind="show" id="ceI-Qa-6eb"/>
+                                    <segue destination="Dda-xp-2lu" kind="show" id="3O4-XD-PH3"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -825,11 +825,14 @@
         <!--Settings-->
         <scene sceneID="lEH-BS-h83">
             <objects>
-                <tableViewController title="Settings" id="tH3-hV-LrZ" customClass="SettingsViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="tH3-hV-LrZ" customClass="SettingsContentTableViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="a1M-07-3J0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
                             <tableViewSection headerTitle="Localization" id="P0q-4o-A5C">
                                 <cells>
@@ -848,6 +851,8 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCj-u7-j4J">
                                                     <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -871,6 +876,8 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LpQ-RE-p8G">
                                                     <rect key="frame" x="320" y="6" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.94901960780000005" green="0.30588235289999999" blue="0.52549019610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-Sr-e1y">
                                                     <rect key="frame" x="16" y="11" width="128" height="21"/>
@@ -1143,6 +1150,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0N-B5-JG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8570" y="1236"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="dbB-8M-0cg">
+            <objects>
+                <viewController title="Settings" id="Dda-xp-2lu" customClass="SettingsViewController" customModule="ConfApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ndf-96-JIe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xz-ZZ-Yon">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <connections>
+                                    <segue destination="tH3-hV-LrZ" kind="embed" id="mcd-CT-hwJ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e0e-Co-Vlr" firstAttribute="trailing" secondItem="2Xz-ZZ-Yon" secondAttribute="trailing" id="70s-H6-hZo"/>
+                            <constraint firstItem="2Xz-ZZ-Yon" firstAttribute="top" secondItem="e0e-Co-Vlr" secondAttribute="top" id="A8e-Tg-sCV"/>
+                            <constraint firstItem="2Xz-ZZ-Yon" firstAttribute="leading" secondItem="e0e-Co-Vlr" secondAttribute="leading" id="jVs-2M-JA9"/>
+                            <constraint firstItem="e0e-Co-Vlr" firstAttribute="bottom" secondItem="2Xz-ZZ-Yon" secondAttribute="bottom" id="oyl-hh-eRR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e0e-Co-Vlr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYb-3g-f7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9386" y="1229"/>
         </scene>
         <!--My profile-->
         <scene sceneID="Q9i-y7-dVO">
@@ -1639,6 +1675,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showFb:" destination="cxh-kU-m0x" eventType="touchUpInside" id="yIr-eV-Irj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYK-D4-KJ0">
                                         <rect key="frame" x="101.33333333333331" y="0.0" width="70" height="70"/>
@@ -1653,6 +1692,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showTwitter:" destination="cxh-kU-m0x" eventType="touchUpInside" id="E7B-u8-LHX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kF-xw-rck">
                                         <rect key="frame" x="202.66666666666666" y="0.0" width="69.999999999999972" height="70"/>
@@ -1667,6 +1709,9 @@
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="showLinkedIn:" destination="cxh-kU-m0x" eventType="touchUpInside" id="16n-qU-O9Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGV-a8-qXF">
                                         <rect key="frame" x="304" y="0.0" width="70" height="70"/>
@@ -2201,7 +2246,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -2374,7 +2419,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -2398,7 +2443,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -2444,6 +2489,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X1D-CX-mBB">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Skia-Regular" family="Skia" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2457,6 +2506,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cir-E9-9CC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7093" y="1681"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DVC-z8-VUo">
+            <objects>
+                <viewController id="YgZ-qv-TtZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rk8-05-LYA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jtz-pj-onr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T4r-dY-Nbb">
+            <objects>
+                <viewController id="3i5-w0-2tR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qF0-4V-Ivu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZX-oM-1qH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="GKP-aQ-Pmy">
+            <objects>
+                <tableViewController id="pLF-kZ-qen" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVQ-zp-f3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10119" y="1236"/>
         </scene>
     </scenes>
     <resources>
