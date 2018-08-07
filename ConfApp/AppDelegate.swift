@@ -32,7 +32,7 @@ let googleApiKey = "AIzaSyA3FR4wr1WaAqQKLLeLnHHwDF7UKoYnM9E"
         
         UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Skia", size: 20)!], for: UIControlState.normal)
 
-        
+        Database.database().isPersistenceEnabled = true
         return true
     }
     

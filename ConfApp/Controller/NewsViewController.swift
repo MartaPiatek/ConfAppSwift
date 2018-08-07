@@ -15,30 +15,40 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     let ref = Database.database().reference(withPath: "news")
     
-    var items = [Event]()
+    var news = [News]()
     var dates = [String]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return news.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsTableViewCell
         
+        let newsItem = news[indexPath.row]
         
+        cell.titleLabel.text = newsItem.title
+        cell.contentLabel.text = newsItem.content
         
-        cell.textLabel?.text = "No news is good news"
         
         return cell
     }
     
-    
+    func addNews(){
+        let id = 1
+        
+        let newsItem = News(title: "No news is good news", content: "")
+        let newsItemRef = self.ref.child(String(describing: id))
+        newsItemRef.setValue(newsItem.toAnyObject())
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         assignbackground()
+        addNews()
         
         tableView.backgroundColor = .clear
         
@@ -55,28 +65,22 @@ class NewsViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         
-     /*
         ref.observe(.value, with: { snapshot in
             
-            var dates: [String] = []
+            var newItems: [News] = []
             
             for child in snapshot.children {
                 
                 if let snapshot = child as? DataSnapshot,
-                    let eventItem = Event(snapshot: snapshot) {
-                    
-                    if !dates.contains(eventItem.date) {
-                        dates.append(eventItem.date)
-                        
-                    }
-                    
+                    let newsItem = News(snapshot: snapshot) {
+                    newItems.append(newsItem)
                 }
             }
             
-            
-            self.dates = dates
+            self.news = newItems
             self.tableView.reloadData()
-        })*/
+        })
+        
     }
     
     override func didReceiveMemoryWarning() {
