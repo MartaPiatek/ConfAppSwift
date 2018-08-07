@@ -24,8 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
         self.hideKeyboardWhenTappedAround()
        // self.navigationController?.navigationItem.leftBarButtonItem?.title = "title"
      
-        self.emailTextField.text = "user@gmail.com"
-        self.passwordTextField.text = "user123"
+        //self.emailTextField.text = "user@gmail.com"
+       // self.passwordTextField.text = "user123"
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
         guard let emailAddress = emailTextField.text, emailAddress != "",
             let password = passwordTextField.text, password != "" else {
                 
-                let alertController = UIAlertController(title: "Błąd logowania", message: "Pola nie mogą być puste", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Login failed", message: "Please fill the required fields (email, password)", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
                 alertController.addAction(okayAction)

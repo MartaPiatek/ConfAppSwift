@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let emailAddress = emailTextField.text, emailAddress != "",
             let password = passwordTextField.text, password != "" else {
                 
-                let alertController = UIAlertController(title: "Błąd rejestracji", message: "Podałeś błędne dane", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Sign up failed", message: "Please fill the required fields (name, email, password)", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
                 alertController.addAction(okayAction)
@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().createUser(withEmail: emailAddress, password: password, completion: { (user, error) in
             if let error = error {
-                let alertController = UIAlertController(title: "Błąd rejestracji", message: error.localizedDescription, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Sign up failed", message: error.localizedDescription, preferredStyle: .alert)
                 
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 
